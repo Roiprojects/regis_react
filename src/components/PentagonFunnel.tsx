@@ -15,8 +15,9 @@ const ICONS = [IconRoots, IconMagnifier, IconShoot, IconBranch, IconStone];
 // closest to the hub) — the connector line flex-grows to always reach.
 const ARC = [0, 34, 58, 34, 0];
 
+// A clear right-pointing pentagon (flat back, pointed front).
 const PENTAGON =
-  "polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%)";
+  "polygon(0 0, calc(100% - 46px) 0, 100% 50%, calc(100% - 46px) 100%, 0 100%)";
 
 export default function PentagonFunnel() {
   return (
@@ -51,7 +52,7 @@ export default function PentagonFunnel() {
                   style={{ marginRight: ARC[i] }}
                 >
                   <div
-                    className="flex items-center gap-3.5 bg-gradient-to-r from-paper-2 to-paper py-4 pl-5 pr-11 shadow-[0_16px_34px_-20px_rgba(26,21,18,0.5)] ring-1 ring-line transition-all duration-500 group-hover:from-night group-hover:to-night"
+                    className="flex items-center gap-3.5 bg-gradient-to-r from-paper-2 to-paper py-4 pl-5 pr-14 shadow-[0_16px_34px_-20px_rgba(26,21,18,0.5)] ring-1 ring-line transition-all duration-500 group-hover:from-night group-hover:to-night"
                     style={{ clipPath: PENTAGON }}
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-paper p-2.5 text-crimson shadow-sm ring-1 ring-line transition-colors duration-500 group-hover:text-crimson">
