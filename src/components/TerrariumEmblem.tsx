@@ -1,20 +1,8 @@
-
 import { motion } from "framer-motion";
 import Link from "@/components/AppLink";
-import { heroAnnotations } from "@/lib/content";
+import TerrariumKeywords from "@/components/TerrariumKeywords";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-
-const KEYWORDS = [...heroAnnotations.left, ...heroAnnotations.right];
-
-const container = {
-  rest: { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
-  show: { transition: { staggerChildren: 0.09, delayChildren: 0.06 } },
-};
-const fromLeft = {
-  rest: { opacity: 0, x: -12 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE } },
-};
 
 export default function TerrariumEmblem({ href }: { href: string }) {
   return (
@@ -27,31 +15,12 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         initial="rest"
         animate="rest"
         whileHover="show"
-        className="mx-auto flex w-full max-w-[780px] items-center justify-center gap-5 sm:gap-8"
+        transition={{ duration: 0.9, ease: EASE }}
+        className="mx-auto flex w-full max-w-[820px] items-center justify-center gap-5 sm:gap-8"
       >
-        {/* Keyword annotations — to the left, each pointing right at the terrarium.
-            Revealed one by one on hover, generously spaced, never over the image. */}
-        <motion.ul
-          variants={container}
-          className="flex shrink-0 flex-col gap-6 text-right sm:gap-7"
-        >
-          {KEYWORDS.map((w) => (
-            <motion.li
-              key={w}
-              variants={fromLeft}
-              className="flex items-center justify-end gap-3 whitespace-nowrap"
-            >
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg drop-shadow-[0_1px_2px_rgba(247,241,230,0.7)]">
-                {w}
-              </span>
-              {/* connector line + point aimed at the image */}
-              <span className="flex items-center">
-                <span className="h-px w-9 bg-gradient-to-r from-copper/20 to-copper" />
-                <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-              </span>
-            </motion.li>
-          ))}
-        </motion.ul>
+        {/* Keyword annotations — icon in a circle + label, pointing at the vessel.
+            Revealed one by one on hover, never over the image. */}
+        <TerrariumKeywords trigger="hover" />
 
         {/* Terrarium image — sits to the right */}
         <div className="relative min-w-0 max-w-[540px] flex-1">

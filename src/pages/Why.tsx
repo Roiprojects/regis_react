@@ -1,9 +1,20 @@
+import { motion } from "framer-motion";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
 import Botanical from "@/components/Botanical";
-import { whyTerrarium, heroAnnotations } from "@/lib/content";
+import TerrariumKeywords from "@/components/TerrariumKeywords";
+import {
+  IconRoots,
+  IconMagnifier,
+  IconShoot,
+  IconBranch,
+  IconStone,
+} from "@/components/TerraIcons";
+import { whyTerrarium } from "@/lib/content";
 
-// The disciplines balanced within the terrarium — shown beside the image.
-const KEYWORDS = [...heroAnnotations.left, ...heroAnnotations.right];
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+// One monoline emblem per "What Sets Us Apart" point (replaces the numbers).
+const SETS_ICONS = [IconRoots, IconMagnifier, IconShoot, IconBranch, IconStone];
 
 export default function WhyPage() {
   return (
@@ -11,7 +22,7 @@ export default function WhyPage() {
       {/* Hero — the framework */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#e6d8c1] via-[#efe4d2] to-[#f5efe4] pb-24 pt-40">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(58%_52%_at_74%_30%,rgba(255,251,244,0.75),transparent_62%)]" />
-        <div className="relative mx-auto grid max-w-[1240px] items-center gap-14 px-[var(--spacing-gutter)] lg:grid-cols-[1.12fr_0.88fr]">
+        <div className="relative mx-auto grid max-w-[1360px] items-center gap-10 px-[var(--spacing-gutter)] lg:grid-cols-[0.72fr_1.28fr]">
           <div>
             <Reveal>
               <p className="eyebrow mb-8 flex items-center gap-3 text-copper-dark">
@@ -37,29 +48,26 @@ export default function WhyPage() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.15}>
-            <div className="mx-auto flex w-full max-w-[540px] items-center gap-5 sm:gap-7">
-              {/* Terrarium image */}
-              <div className="relative min-w-0 max-w-[360px] flex-1">
-                <img
-                  src="/images/terrarium-element.png"
-                  alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
-                  className="block w-full object-contain drop-shadow-[0_36px_60px_rgba(80,60,30,0.30)]"
-                />
-              </div>
-              {/* Keywords — always visible, beside the image */}
-              <ul className="flex shrink-0 flex-col gap-3.5">
-                {KEYWORDS.map((w) => (
-                  <li key={w} className="flex items-center gap-2 whitespace-nowrap">
-                    <span className="h-px w-5 bg-copper" />
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg">
-                      {w}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+          <div className="mx-auto flex w-full max-w-[800px] items-center justify-end gap-5 sm:gap-7">
+            {/* Keyword annotations — same design as the homepage hero, revealed
+                on scroll into view */}
+            <TerrariumKeywords trigger="view" />
+
+            {/* Terrarium image — big, on the right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-12%" }}
+              transition={{ duration: 1, ease: EASE }}
+              className="relative min-w-0 max-w-[560px] flex-1"
+            >
+              <img
+                src="/images/terrarium-element.png"
+                alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
+                className="block w-full object-contain drop-shadow-[0_36px_60px_rgba(80,60,30,0.30)]"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -77,11 +85,13 @@ export default function WhyPage() {
           </Reveal>
 
           <div className="mt-16 border-t border-stone">
-            {whyTerrarium.setsApart.map((item, i) => (
+            {whyTerrarium.setsApart.map((item, i) => {
+              const Icon = SETS_ICONS[i % SETS_ICONS.length];
+              return (
               <Reveal key={item.title} delay={i * 0.05}>
-                <div className="group grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 border-b border-stone py-9 transition-colors duration-500 md:grid-cols-[5rem_0.9fr_1.1fr] md:gap-x-10 md:py-11">
-                  <span className="font-[var(--font-display)] text-3xl leading-none text-copper/70 transition-colors duration-500 group-hover:text-copper md:text-[2.6rem]">
-                    {String(i + 1).padStart(2, "0")}
+                <div className="group grid grid-cols-[auto_1fr] items-center gap-x-6 gap-y-3 border-b border-stone py-9 transition-colors duration-500 md:grid-cols-[5rem_0.9fr_1.1fr] md:gap-x-10 md:py-11">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center self-center rounded-full border border-copper/40 bg-ivory-2 p-3 text-copper shadow-[0_3px_12px_rgba(80,60,30,0.10)] transition-colors duration-500 group-hover:border-copper group-hover:text-copper-dark md:h-14 md:w-14">
+                    <Icon />
                   </span>
                   <h3 className="self-center font-[var(--font-display)] text-2xl leading-snug text-inkg md:text-[1.7rem]">
                     {item.title}
@@ -91,7 +101,8 @@ export default function WhyPage() {
                   </p>
                 </div>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
 
           {/* Elegant close */}

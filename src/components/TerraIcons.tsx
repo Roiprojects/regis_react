@@ -124,3 +124,13 @@ export const iconByService: Record<string, () => React.JSX.Element> = {
   "private-equity": IconShoot,
   "specialized-dispute-audit": IconBranch,
 };
+
+// Icon per hero/terrarium keyword (annotation design, ref "1 (1)").
+export const iconByKeyword: Record<string, () => React.JSX.Element> = {
+  Governance: IconRoots,
+  Compliance: IconGlass,
+  "Legal Advisory": IconBranch,
+  "Risk Management": IconDroplet,
+  Structuring: IconStone,
+  "Strategic Advisory": IconShoot,
+};

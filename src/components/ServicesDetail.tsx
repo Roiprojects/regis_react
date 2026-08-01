@@ -1,7 +1,9 @@
-
+import { motion } from "framer-motion";
 import { services } from "@/lib/content";
 import { iconByService } from "@/components/TerraIcons";
-import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { Reveal } from "@/components/motion/Reveal";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 // Look up a description for a sub-service item from the service's details.
 function descFor(
@@ -17,7 +19,9 @@ function descFor(
   return d?.desc;
 }
 
-// Full, always-visible services showcase — every service and every sub-service.
+// Full, always-visible services showcase — every service and every sub-service,
+// each card fading up on scroll into view (each triggers independently so no
+// card is ever left blank).
 export default function ServicesDetail() {
   return (
     <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
@@ -51,26 +55,35 @@ export default function ServicesDetail() {
               </Reveal>
 
               {/* Right — every sub-service with its description */}
-              <Stagger className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
-                {s.items.map((it) => {
+              <div className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+                {s.items.map((it, idx) => {
                   const desc = descFor(it, s.details);
                   return (
-                    <StaggerItem key={it}>
-                      <div className="group h-full bg-paper-2 p-7 transition-colors duration-500 hover:bg-night">
-                        <span className="mb-4 block h-1.5 w-6 rounded-full bg-crimson transition-colors group-hover:bg-gold-soft" />
-                        <p className="font-[var(--font-display)] text-xl leading-snug text-ink transition-colors duration-500 group-hover:text-paper">
-                          {it}
+                    <motion.div
+                      key={it}
+                      initial={{ opacity: 0, y: 26 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "0px 0px -70px 0px" }}
+                      transition={{
+                        duration: 0.6,
+                        ease: EASE,
+                        delay: (idx % 2) * 0.08,
+                      }}
+                      className="group h-full bg-paper-2 p-7 transition-colors duration-500 hover:bg-night"
+                    >
+                      <span className="mb-4 block h-1.5 w-6 rounded-full bg-crimson transition-colors group-hover:bg-gold-soft" />
+                      <p className="font-[var(--font-display)] text-xl leading-snug text-ink transition-colors duration-500 group-hover:text-paper">
+                        {it}
+                      </p>
+                      {desc ? (
+                        <p className="mt-2.5 text-sm leading-relaxed text-muted transition-colors duration-500 group-hover:text-white/65">
+                          {desc}
                         </p>
-                        {desc ? (
-                          <p className="mt-2.5 text-sm leading-relaxed text-muted transition-colors duration-500 group-hover:text-white/65">
-                            {desc}
-                          </p>
-                        ) : null}
-                      </div>
-                    </StaggerItem>
+                      ) : null}
+                    </motion.div>
                   );
                 })}
-              </Stagger>
+              </div>
             </div>
           </section>
         );

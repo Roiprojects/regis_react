@@ -3,7 +3,17 @@ import PageHeader from "@/components/PageHeader";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
 import Botanical from "@/components/Botanical";
+import {
+  IconRoots,
+  IconMagnifier,
+  IconShoot,
+  IconBranch,
+  IconStone,
+} from "@/components/TerraIcons";
 import { brand, about } from "@/lib/content";
+
+// One emblem per reason (pentagon cards).
+const REASON_ICONS = [IconRoots, IconMagnifier, IconShoot, IconBranch, IconStone];
 
 export default function AboutPage() {
   return (
@@ -60,11 +70,12 @@ export default function AboutPage() {
               {about.whyChoose.map((v, i) => {
                 const arc = [
                   "lg:translate-x-0",
-                  "lg:translate-x-5",
-                  "lg:translate-x-10",
-                  "lg:translate-x-5",
+                  "lg:translate-x-6",
+                  "lg:translate-x-12",
+                  "lg:translate-x-6",
                   "lg:translate-x-0",
                 ][i];
+                const Icon = REASON_ICONS[i % REASON_ICONS.length];
                 return (
                   <StaggerItem key={v.title}>
                     <div className="flex items-center gap-4 lg:gap-5">
@@ -78,21 +89,26 @@ export default function AboutPage() {
                       </span>
                       {/* connector */}
                       <span className="hidden h-px w-6 shrink-0 bg-line lg:block" />
-                      {/* pentagon card pointing toward the hub */}
-                      <div className={`group flex-1 lg:max-w-[320px] ${arc}`}>
+                      {/* pentagon card (icon + title) pointing toward the hub */}
+                      <div className={`group flex-1 lg:max-w-[330px] ${arc}`}>
                         <div
-                          className="bg-paper-2 py-4 pl-6 pr-10 shadow-sm ring-1 ring-line transition-colors duration-500 hover:bg-night"
+                          className="flex items-center gap-3 bg-paper-2 py-3.5 pl-5 pr-12 shadow-sm ring-1 ring-line transition-colors duration-500 hover:bg-night"
                           style={{
                             clipPath:
                               "polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%)",
                           }}
                         >
-                          <p className="font-[var(--font-display)] text-lg leading-snug text-ink transition-colors duration-500 group-hover:text-paper">
-                            {v.title}
-                          </p>
-                          <p className="mt-1 text-xs leading-relaxed text-muted lg:hidden">
-                            {v.body}
-                          </p>
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-crimson/40 p-2 text-crimson transition-colors duration-500 group-hover:border-gold-soft group-hover:text-gold-soft">
+                            <Icon />
+                          </span>
+                          <div>
+                            <p className="font-[var(--font-display)] text-base leading-tight text-ink transition-colors duration-500 group-hover:text-paper">
+                              {v.title}
+                            </p>
+                            <p className="mt-1 text-xs leading-snug text-muted lg:hidden">
+                              {v.body}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -101,18 +117,20 @@ export default function AboutPage() {
               })}
             </Stagger>
 
-            {/* Central hub */}
+            {/* Central hub — dashed ring around a solid node (ref pentagon) */}
             <div className="mt-12 flex justify-center lg:mt-0">
-              <div className="relative flex aspect-square w-[200px] items-center justify-center rounded-full bg-night text-center text-paper ring-8 ring-crimson/10">
-                <div>
-                  <p className="font-[var(--font-display)] text-5xl leading-none text-gold-soft">
-                    5
-                  </p>
-                  <p className="mt-2 text-[0.62rem] uppercase tracking-[0.22em] text-paper/70">
-                    Reasons clients
-                    <br />
-                    choose us
-                  </p>
+              <div className="flex aspect-square w-[230px] items-center justify-center rounded-full border-2 border-dashed border-crimson/25 p-4">
+                <div className="flex h-full w-full items-center justify-center rounded-full bg-night text-center text-paper shadow-[0_20px_50px_-20px_rgba(26,21,18,0.6)]">
+                  <div>
+                    <p className="font-[var(--font-display)] text-5xl leading-none text-gold-soft">
+                      5
+                    </p>
+                    <p className="mt-2 text-[0.62rem] uppercase tracking-[0.22em] text-paper/70">
+                      Reasons clients
+                      <br />
+                      choose us
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

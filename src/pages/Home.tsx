@@ -102,7 +102,7 @@ export default function Home() {
             </Link>
           </Reveal>
           <Reveal delay={0.1}>
-            <ul className="grid gap-x-8 gap-y-1 self-center border-t border-stone sm:grid-cols-2">
+            <ul className="grid gap-x-8 gap-y-1 self-start border-t border-stone sm:grid-cols-2 lg:mt-24">
               {pe.items.map((it) => (
                 <li
                   key={it}
@@ -135,10 +135,10 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section data-bg={LINEN} className="py-32">
+      <section data-bg={LINEN} className="py-28">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
-            <div className="flex flex-col items-start justify-between gap-10 border-t border-stone pt-16 md:flex-row md:items-end">
+            <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
               <h2 className="display-lg max-w-[16ch] text-inkg">
                 {contact.title}
               </h2>
