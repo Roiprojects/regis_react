@@ -72,7 +72,7 @@ export default function WhyPage() {
 
       {/* What sets us apart — elegant editorial list */}
       <section className="relative overflow-hidden bg-ivory py-28">
-        <Botanical src="green.png" className="right-[5vw] top-16 hidden w-12 sm:block md:w-16" />
+        <Botanical src="green.png" className="right-[5vw] top-40 hidden w-12 sm:block md:w-16" />
         <div className="mx-auto max-w-[1080px] px-[var(--spacing-gutter)]">
           <Reveal>
               <div className="mx-auto max-w-[40ch] text-center">

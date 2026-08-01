@@ -82,7 +82,7 @@ export default function Home() {
           src="/images/succulents/lilac.png"
           alt=""
           aria-hidden
-          className="pointer-events-none absolute bottom-8 left-[5vw] w-14 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.22)] md:w-20"
+          className="pointer-events-none absolute top-32 right-[4vw] w-14 opacity-90 drop-shadow-[0_16px_24px_rgba(34,52,40,0.22)] md:w-20"
         />
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[1fr_1fr]">
           <Reveal>

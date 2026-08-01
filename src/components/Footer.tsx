@@ -21,7 +21,7 @@ export default function Footer() {
         <Botanical
           src="teal.png"
           opacity={80}
-          className="right-[5vw] top-12 hidden w-14 md:block md:w-20"
+          className="right-[5vw] top-24 hidden w-14 md:block md:w-20"
         />
       )}
       {/* Big quote band — hidden on the Capital page */}
