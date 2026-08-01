@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Link from "@/components/AppLink";
 import { heroAnnotations } from "@/lib/content";
@@ -10,14 +11,10 @@ const container = {
   rest: { transition: { staggerChildren: 0.04, staggerDirection: -1 } },
   show: { transition: { staggerChildren: 0.09, delayChildren: 0.06 } },
 };
-const fromRight = {
-  rest: { opacity: 0, x: -18 },
+const fromLeft = {
+  rest: { opacity: 0, x: -12 },
   show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: EASE } },
 };
-
-// Readable pill — same hover chip styling as before (slightly slimmer).
-const chip =
-  "whitespace-nowrap rounded-full bg-ivory-2/90 px-2.5 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-inkg shadow-[0_6px_18px_rgba(34,52,40,0.22)] ring-1 ring-copper/30 backdrop-blur-sm";
 
 export default function TerrariumEmblem({ href }: { href: string }) {
   return (
@@ -30,9 +27,33 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         initial="rest"
         animate="rest"
         whileHover="show"
-        className="mx-auto flex w-full max-w-[760px] items-center justify-center gap-4 sm:gap-5"
+        className="mx-auto flex w-full max-w-[780px] items-center justify-center gap-5 sm:gap-8"
       >
-        {/* Terrarium image — same size / drop-shadow / hover-scale as before */}
+        {/* Keyword annotations — to the left, each pointing right at the terrarium.
+            Revealed one by one on hover, generously spaced, never over the image. */}
+        <motion.ul
+          variants={container}
+          className="flex shrink-0 flex-col gap-6 text-right sm:gap-7"
+        >
+          {KEYWORDS.map((w) => (
+            <motion.li
+              key={w}
+              variants={fromLeft}
+              className="flex items-center justify-end gap-3 whitespace-nowrap"
+            >
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg drop-shadow-[0_1px_2px_rgba(247,241,230,0.7)]">
+                {w}
+              </span>
+              {/* connector line + point aimed at the image */}
+              <span className="flex items-center">
+                <span className="h-px w-9 bg-gradient-to-r from-copper/20 to-copper" />
+                <span className="h-1.5 w-1.5 rounded-full bg-copper" />
+              </span>
+            </motion.li>
+          ))}
+        </motion.ul>
+
+        {/* Terrarium image — sits to the right */}
         <div className="relative min-w-0 max-w-[540px] flex-1">
           <img
             src="/images/terrarium-element.png"
@@ -42,20 +63,6 @@ export default function TerrariumEmblem({ href }: { href: string }) {
           {/* slow light reflection sweeping across the glass */}
           <span className="glass-sheen" />
         </div>
-
-        {/* Keyword chips — revealed one by one on hover, beside the image (no overlap) */}
-        <motion.ul variants={container} className="flex shrink-0 flex-col gap-3">
-          {KEYWORDS.map((w) => (
-            <motion.li
-              key={w}
-              variants={fromRight}
-              className="flex items-center gap-2 whitespace-nowrap"
-            >
-              <span className="h-px w-5 bg-copper" />
-              <span className={chip}>{w}</span>
-            </motion.li>
-          ))}
-        </motion.ul>
       </motion.div>
     </Link>
   );

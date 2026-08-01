@@ -2,7 +2,7 @@ import Link from "@/components/AppLink";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
-import ServicesSlider from "@/components/ServicesSlider";
+import ServicesDetail from "@/components/ServicesDetail";
 import { contact } from "@/lib/content";
 
 export default function ServicesPage() {
@@ -15,7 +15,9 @@ export default function ServicesPage() {
         accent="teal.png"
       />
 
-      <ServicesSlider />
+      <section className="pb-8 pt-4">
+        <ServicesDetail />
+      </section>
 
       {/* CTA */}
       <section className="py-28">
