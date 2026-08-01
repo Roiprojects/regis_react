@@ -31,10 +31,10 @@ export default function WhyPage() {
               </p>
             </Reveal>
             <h1 className="font-[var(--font-display)] text-inkg">
-              <span className="block text-[clamp(2.3rem,5vw,4.1rem)] leading-[1.05]">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.1rem)] leading-[1.06]">
                 <RevealWords text="The Terrarium Framework" delay={0.15} />
               </span>
-              <span className="mt-4 block max-w-[22ch] text-[clamp(1.15rem,2.1vw,1.7rem)] font-normal italic leading-snug text-copper">
+              <span className="mt-3 block max-w-[22ch] text-[clamp(1.05rem,1.8vw,1.4rem)] font-normal italic leading-snug text-copper">
                 <RevealWords
                   text="An Integrated Approach to Corporate Advisory"
                   delay={0.4}
@@ -48,12 +48,8 @@ export default function WhyPage() {
             </Reveal>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[800px] items-center justify-end gap-5 sm:gap-7">
-            {/* Keyword annotations — same design as the homepage hero, revealed
-                on scroll into view */}
-            <TerrariumKeywords trigger="view" />
-
-            {/* Terrarium image — big, on the right */}
+          <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-0">
+            {/* Terrarium image — big, on the left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -67,6 +63,9 @@ export default function WhyPage() {
                 className="block w-full object-contain drop-shadow-[0_36px_60px_rgba(80,60,30,0.30)]"
               />
             </motion.div>
+
+            {/* Keyword annotations — same design as the homepage hero */}
+            <TerrariumKeywords trigger="view" />
           </div>
         </div>
       </section>

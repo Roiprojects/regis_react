@@ -61,20 +61,22 @@ export default function ServicesCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Tabs */}
-      <div className="flex flex-wrap items-center gap-x-7 gap-y-3">
+      {/* Tabs — 3 x 2 grid */}
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
         {services.map((sv, i) => (
           <button
             key={sv.id}
             onClick={() => go(i)}
-            className={`group flex items-center gap-2 whitespace-nowrap py-1 text-[0.82rem] uppercase tracking-[0.12em] transition-colors ${
-              i === active ? "text-gold-soft" : "text-paper/45 hover:text-paper"
+            className={`group flex items-center gap-2.5 rounded-lg border px-4 py-3 text-left text-[0.82rem] uppercase tracking-[0.1em] transition-colors ${
+              i === active
+                ? "border-gold-soft/50 bg-white/[0.06] text-gold-soft"
+                : "border-white/10 text-paper/50 hover:border-white/25 hover:text-paper"
             }`}
           >
-            <span className="font-[var(--font-display)] text-xs">
+            <span className="font-[var(--font-display)] text-sm">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="font-medium">{SHORT[sv.id]}</span>
+            <span className="font-medium leading-tight">{SHORT[sv.id]}</span>
           </button>
         ))}
       </div>
@@ -131,14 +133,14 @@ export default function ServicesCarousel() {
                 <motion.div
                   key={it}
                   variants={subItem}
-                  className="group/card h-full rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.015] p-6 backdrop-blur-sm transition-colors duration-500 hover:border-gold-soft/40 hover:from-white/[0.11]"
+                  className="group/card h-full rounded-xl bg-[#efe4ce] p-6 shadow-[0_14px_36px_-22px_rgba(0,0,0,0.55)] transition-colors duration-500 hover:bg-[#f6efe0]"
                 >
-                  <span className="mb-3.5 block h-1.5 w-6 rounded-full bg-gold-soft" />
-                  <p className="font-[var(--font-display)] text-lg leading-snug text-paper">
+                  <span className="mb-3.5 block h-1.5 w-6 rounded-full bg-crimson" />
+                  <p className="font-[var(--font-display)] text-lg leading-snug text-ink">
                     {it}
                   </p>
                   {desc ? (
-                    <p className="mt-2 text-sm leading-relaxed text-paper/60">
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
                       {desc}
                     </p>
                   ) : null}

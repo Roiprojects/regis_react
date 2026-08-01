@@ -120,17 +120,12 @@ export default function AboutPage() {
             {/* Central hub — dashed ring around a solid node (ref pentagon) */}
             <div className="mt-12 flex justify-center lg:-ml-8 lg:mt-0">
               <div className="flex aspect-square w-[240px] items-center justify-center rounded-full border-2 border-dashed border-crimson/25 p-4">
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-night text-center text-paper shadow-[0_24px_60px_-24px_rgba(26,21,18,0.65)]">
-                  <div>
-                    <p className="font-[var(--font-display)] text-[3.4rem] leading-none text-gold-soft">
-                      5
-                    </p>
-                    <p className="mt-2 text-[0.62rem] uppercase tracking-[0.22em] text-paper/70">
-                      Reasons clients
-                      <br />
-                      choose us
-                    </p>
-                  </div>
+                <div className="flex h-full w-full items-center justify-center rounded-full bg-night px-6 text-center text-paper shadow-[0_24px_60px_-24px_rgba(26,21,18,0.65)]">
+                  <p className="font-[var(--font-display)] text-[1.9rem] leading-tight text-gold-soft">
+                    Corporate
+                    <br />
+                    Services
+                  </p>
                 </div>
               </div>
             </div>

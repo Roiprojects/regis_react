@@ -24,11 +24,11 @@ export default function PageHeader({
           <span className="h-px w-10 bg-crimson" />
           {eyebrow}
         </p>
-        <h1 className="display-xl max-w-[20ch] text-ink">
+        <h1 className="max-w-[22ch] font-[var(--font-display)] text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] text-ink">
           <RevealWords text={title} delay={0.1} />
         </h1>
         {intro && (
-          <p className="mt-10 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft">
             {intro}
           </p>
         )}

@@ -33,7 +33,7 @@ export default function CapitalPage() {
             <span className="h-px w-10" style={{ backgroundColor: GOLD }} />
             {capital.eyebrow}
           </p>
-          <h1 className="display-xl max-w-[20ch] text-[#f4ecdb]">
+          <h1 className="max-w-[22ch] font-[var(--font-display)] text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] text-[#f4ecdb]">
             <RevealWords text={capital.title} delay={0.1} />
           </h1>
           <div className="mt-10 grid max-w-4xl gap-6 lg:grid-cols-2">

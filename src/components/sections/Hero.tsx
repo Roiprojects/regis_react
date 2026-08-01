@@ -34,7 +34,7 @@ export default function Hero() {
 
           <h1
             className="display-xl text-inkg font-serif"
-            style={{ fontSize: "clamp(1.7rem, 2.9vw, 2.35rem)", lineHeight: 1.12 }}
+            style={{ fontSize: "clamp(1.55rem, 2.5vw, 2.05rem)", lineHeight: 1.14 }}
           >
             <span className="block whitespace-nowrap">
               <RevealWords text={hero.headlineLine1} delay={0.15} />
@@ -48,7 +48,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.8 }}
-            className="mt-7 max-w-xl font-[var(--font-display)] text-xl italic leading-snug text-copper-dark"
+            className="mt-6 max-w-xl font-[var(--font-display)] text-lg italic leading-snug text-copper-dark"
           >
             {hero.sub}
           </motion.p>
@@ -66,15 +66,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 1.05 }}
-            className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
+            className="mt-9 flex items-center gap-3"
           >
-            <Link href={hero.ctas[0].href} className="btn btn-terra group bg-copper hover:bg-copper-dark">
+            <Link
+              href={hero.ctas[0].href}
+              className="btn btn-terra group whitespace-nowrap bg-copper px-6 hover:bg-copper-dark"
+            >
               {hero.ctas[0].label}
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
             <Link
               href={hero.ctas[1].href}
-              className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-copper"
+              className="btn group whitespace-nowrap border border-copper/50 px-6 text-inkg transition-colors duration-300 hover:border-copper hover:bg-copper/10"
             >
               {hero.ctas[1].label}
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />

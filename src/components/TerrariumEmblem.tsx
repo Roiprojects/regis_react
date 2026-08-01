@@ -16,13 +16,9 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         animate="rest"
         whileHover="show"
         transition={{ duration: 0.9, ease: EASE }}
-        className="mx-auto flex w-full max-w-[820px] items-center justify-center gap-5 sm:gap-8"
+        className="mx-auto flex w-full max-w-[820px] items-center justify-center gap-0"
       >
-        {/* Keyword annotations — icon in a circle + label, pointing at the vessel.
-            Revealed one by one on hover, never over the image. */}
-        <TerrariumKeywords trigger="hover" />
-
-        {/* Terrarium image — sits to the right */}
+        {/* Terrarium image — sits to the left */}
         <div className="relative min-w-0 max-w-[540px] flex-1">
           <img
             src="/images/terrarium-element.png"
@@ -32,6 +28,10 @@ export default function TerrariumEmblem({ href }: { href: string }) {
           {/* slow light reflection sweeping across the glass */}
           <span className="glass-sheen" />
         </div>
+
+        {/* Keyword annotations — to the right, connector line touching the vessel.
+            Revealed one by one on hover, never over the image. */}
+        <TerrariumKeywords trigger="hover" />
       </motion.div>
     </Link>
   );
