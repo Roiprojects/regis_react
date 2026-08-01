@@ -37,7 +37,7 @@ const subItem: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
 };
 
-// Auto-advancing services carousel with manual control (tabs, prev/next, dots).
+// Auto-advancing services carousel (dark theme) with manual control.
 export default function ServicesCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -68,7 +68,7 @@ export default function ServicesCarousel() {
             key={sv.id}
             onClick={() => go(i)}
             className={`group flex items-center gap-2 whitespace-nowrap py-1 text-[0.82rem] uppercase tracking-[0.12em] transition-colors ${
-              i === active ? "text-crimson" : "text-muted hover:text-ink"
+              i === active ? "text-gold-soft" : "text-paper/45 hover:text-paper"
             }`}
           >
             <span className="font-[var(--font-display)] text-xs">
@@ -80,13 +80,13 @@ export default function ServicesCarousel() {
       </div>
 
       {/* Progress bar */}
-      <div className="mt-5 h-px w-full bg-line">
+      <div className="mt-5 h-px w-full bg-white/12">
         <motion.div
           key={active + (paused ? "-p" : "")}
           initial={{ width: "0%" }}
           animate={{ width: paused ? "0%" : "100%" }}
           transition={{ duration: paused ? 0 : DURATION / 1000, ease: "linear" }}
-          className="h-px bg-crimson"
+          className="h-px bg-gold-soft"
         />
       </div>
 
@@ -103,17 +103,17 @@ export default function ServicesCarousel() {
           {/* Header */}
           <div>
             <div className="flex items-center gap-4">
-              <span className="font-[var(--font-display)] text-4xl text-crimson">
+              <span className="font-[var(--font-display)] text-4xl text-gold-soft">
                 {String(active + 1).padStart(2, "0")}
               </span>
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-crimson/30 p-3 text-crimson">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-crimson/90 p-3 text-paper">
                 {Icon ? <Icon /> : null}
               </span>
             </div>
-            <h3 className="mt-6 font-[var(--font-display)] text-[clamp(1.9rem,3vw,2.7rem)] leading-tight text-ink">
+            <h3 className="mt-6 font-[var(--font-display)] text-[clamp(1.9rem,3vw,2.7rem)] leading-tight text-paper">
               {s.title}
             </h3>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-ink-soft">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-paper/65">
               {s.summary}
             </p>
           </div>
@@ -123,7 +123,7 @@ export default function ServicesCarousel() {
             variants={subContainer}
             initial="hidden"
             animate="show"
-            className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2"
+            className="grid gap-4 sm:grid-cols-2"
           >
             {s.items.map((it) => {
               const desc = descFor(it, s.details);
@@ -131,14 +131,14 @@ export default function ServicesCarousel() {
                 <motion.div
                   key={it}
                   variants={subItem}
-                  className="group/card h-full bg-paper-2 p-6 transition-colors duration-500 hover:bg-night"
+                  className="group/card h-full rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.015] p-6 backdrop-blur-sm transition-colors duration-500 hover:border-gold-soft/40 hover:from-white/[0.11]"
                 >
-                  <span className="mb-3.5 block h-1.5 w-6 rounded-full bg-crimson transition-colors group-hover/card:bg-gold-soft" />
-                  <p className="font-[var(--font-display)] text-lg leading-snug text-ink transition-colors duration-500 group-hover/card:text-paper">
+                  <span className="mb-3.5 block h-1.5 w-6 rounded-full bg-gold-soft" />
+                  <p className="font-[var(--font-display)] text-lg leading-snug text-paper">
                     {it}
                   </p>
                   {desc ? (
-                    <p className="mt-2 text-sm leading-relaxed text-muted transition-colors duration-500 group-hover/card:text-white/65">
+                    <p className="mt-2 text-sm leading-relaxed text-paper/60">
                       {desc}
                     </p>
                   ) : null}
@@ -158,7 +158,7 @@ export default function ServicesCarousel() {
               onClick={() => go(i)}
               aria-label={`Go to service ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === active ? "w-7 bg-crimson" : "w-1.5 bg-line hover:bg-muted"
+                i === active ? "w-7 bg-gold-soft" : "w-1.5 bg-white/25 hover:bg-white/50"
               }`}
             />
           ))}
@@ -167,14 +167,14 @@ export default function ServicesCarousel() {
           <button
             onClick={() => go(active - 1)}
             aria-label="Previous service"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-crimson hover:text-crimson"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-paper transition-colors hover:border-gold-soft hover:text-gold-soft"
           >
             <ArrowIcon className="rotate-180" />
           </button>
           <button
             onClick={() => go(active + 1)}
             aria-label="Next service"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-crimson hover:text-crimson"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-paper transition-colors hover:border-gold-soft hover:text-gold-soft"
           >
             <ArrowIcon />
           </button>

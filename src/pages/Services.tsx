@@ -15,7 +15,7 @@ export default function ServicesPage() {
         accent="teal.png"
       />
 
-      <section className="pb-12 pt-4">
+      <section className="bg-night py-20 text-paper">
         <ServicesCarousel />
       </section>
 

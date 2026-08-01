@@ -64,48 +64,48 @@ export default function AboutPage() {
               {about.whyChooseTitle}
             </h2>
           </Reveal>
-          {/* Pentagon funnel — structure adapted from a 5-step pentagon diagram */}
-          <div className="mt-16 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10">
-            <Stagger className="space-y-3.5">
+          {/* Pentagon funnel — 5 pentagons converging on a central hub (ref) */}
+          <div className="mt-20 lg:grid lg:grid-cols-[1fr_auto] lg:items-center">
+            <Stagger className="space-y-1.5">
               {about.whyChoose.map((v, i) => {
                 const arc = [
-                  "lg:translate-x-0",
-                  "lg:translate-x-6",
                   "lg:translate-x-12",
                   "lg:translate-x-6",
                   "lg:translate-x-0",
+                  "lg:translate-x-6",
+                  "lg:translate-x-12",
                 ][i];
                 const Icon = REASON_ICONS[i % REASON_ICONS.length];
                 return (
                   <StaggerItem key={v.title}>
                     <div className="flex items-center gap-4 lg:gap-5">
                       {/* description */}
-                      <p className="hidden w-[30%] shrink-0 text-right text-sm leading-relaxed text-muted lg:block">
+                      <p className="hidden flex-1 text-right text-sm leading-relaxed text-muted lg:block">
                         {v.body}
                       </p>
                       {/* numbered node */}
-                      <span className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-crimson text-sm font-semibold text-paper shadow-[0_6px_16px_-6px_rgba(156,26,26,0.6)]">
+                      <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-crimson font-[var(--font-display)] text-lg text-paper shadow-[0_8px_20px_-8px_rgba(156,26,26,0.7)]">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       {/* connector */}
-                      <span className="hidden h-px w-6 shrink-0 bg-line lg:block" />
+                      <span className="hidden h-px w-7 shrink-0 bg-crimson/30 lg:block" />
                       {/* pentagon card (icon + title) pointing toward the hub */}
-                      <div className={`group flex-1 lg:max-w-[330px] ${arc}`}>
+                      <div className={`group w-full shrink-0 lg:w-[300px] ${arc}`}>
                         <div
-                          className="flex items-center gap-3 bg-paper-2 py-3.5 pl-5 pr-12 shadow-sm ring-1 ring-line transition-colors duration-500 hover:bg-night"
+                          className="flex items-center gap-3 bg-paper-2 py-4 pl-5 pr-12 shadow-[0_12px_30px_-18px_rgba(26,21,18,0.45)] ring-1 ring-line transition-colors duration-500 hover:bg-night"
                           style={{
                             clipPath:
-                              "polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%)",
+                              "polygon(0 0, 86% 0, 100% 50%, 86% 100%, 0 100%)",
                           }}
                         >
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-crimson/40 p-2 text-crimson transition-colors duration-500 group-hover:border-gold-soft group-hover:text-gold-soft">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-crimson/40 p-2 text-crimson transition-colors duration-500 group-hover:border-gold-soft group-hover:text-gold-soft">
                             <Icon />
                           </span>
                           <div>
                             <p className="font-[var(--font-display)] text-base leading-tight text-ink transition-colors duration-500 group-hover:text-paper">
                               {v.title}
                             </p>
-                            <p className="mt-1 text-xs leading-snug text-muted lg:hidden">
+                            <p className="mt-0.5 text-xs leading-snug text-muted lg:hidden">
                               {v.body}
                             </p>
                           </div>
@@ -118,11 +118,11 @@ export default function AboutPage() {
             </Stagger>
 
             {/* Central hub — dashed ring around a solid node (ref pentagon) */}
-            <div className="mt-12 flex justify-center lg:mt-0">
-              <div className="flex aspect-square w-[230px] items-center justify-center rounded-full border-2 border-dashed border-crimson/25 p-4">
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-night text-center text-paper shadow-[0_20px_50px_-20px_rgba(26,21,18,0.6)]">
+            <div className="mt-12 flex justify-center lg:-ml-8 lg:mt-0">
+              <div className="flex aspect-square w-[240px] items-center justify-center rounded-full border-2 border-dashed border-crimson/25 p-4">
+                <div className="flex h-full w-full items-center justify-center rounded-full bg-night text-center text-paper shadow-[0_24px_60px_-24px_rgba(26,21,18,0.65)]">
                   <div>
-                    <p className="font-[var(--font-display)] text-5xl leading-none text-gold-soft">
+                    <p className="font-[var(--font-display)] text-[3.4rem] leading-none text-gold-soft">
                       5
                     </p>
                     <p className="mt-2 text-[0.62rem] uppercase tracking-[0.22em] text-paper/70">
