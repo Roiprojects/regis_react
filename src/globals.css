@@ -1,0 +1,274 @@
+@import "tailwindcss";
+
+/* Font families (loaded via Google Fonts in index.html).
+   These replace the CSS variables next/font previously injected. */
+:root {
+  --font-cormorant: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-jost: "Jost", system-ui, sans-serif;
+}
+
+/* ============================================================
+   REGIS AND SAVOY
+   Homepage theme: "The Terrarium — A Curated Corporate Ecosystem"
+   Warm ivory + dark green, antique gold, deep bronze, soft stone.
+   (Legacy heritage tokens kept for the untouched inner pages.)
+   ============================================================ */
+
+@theme {
+  /* Legacy heritage palette (About / Services / Contact) */
+  --color-paper: #f3ebdd;
+  --color-paper-2: #faf5ea;
+  --color-paper-3: #ebe0cd;
+  --color-ink: #1a1512;
+  --color-ink-soft: #4d443b;
+  --color-muted: #8a7d6a;
+  --color-line: #d8cab2;
+  --color-line-soft: #e4d9c5;
+  --color-crimson: #9c1a1a;
+  --color-crimson-bright: #c8302f;
+  --color-crimson-deep: #631212;
+  --color-gold: #b28a4c;
+  --color-gold-soft: #d8b878;
+  --color-gold-bright: #e6cd94;
+
+  /* ---- Terrarium theme (homepage + shared frame) ---- */
+  --color-ivory: #e3d3bf;        /* primary warm linen ivory (matching hero image) */
+  --color-ivory-2: #fbfaf5;
+  --color-ivory-3: #efe9dd;
+  --color-forest: #223428;       /* dark green sections (never black) */
+  --color-forest-2: #2b4234;
+  --color-forest-deep: #182720;
+  --color-forest-soft: #3a5244;
+  --color-antique: #c0724a;      /* copper accent — replacing gold */
+  --color-antique-soft: #d9926d;
+  --color-bronze: #9e532d;       /* copper hover / deep copper */
+  --color-stone: #d9d4cc;        /* divider lines / soft stone */
+  --color-stone-soft: #e7e2d9;
+  --color-inkg: #26302a;         /* dark green ink text (not black) */
+  --color-inkg-soft: #566158;
+  --color-sage: #7c857b;         /* muted sage */
+
+  /* ---- Copper palette tokens ---- */
+  --color-copper: #c0724a;       /* rich primary copper */
+  --color-copper-soft: #d9926d;  /* light copper highlight */
+  --color-copper-bright: #e49e79;
+  --color-copper-dark: #9e532d;  /* deep burnished copper */
+  --color-copper-hover: #a85830;
+  --color-linen: #e3d3bf;        /* exact linen background tone from ChatGPT image */
+
+  /* Dark tokens redefined to deep green so NO pure black remains sitewide */
+  --color-night: #223428;
+  --color-night-2: #2b4234;
+  --color-night-3: #3a5244;
+
+  /* Typography */
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --spacing-gutter: 6vw;
+
+  /* Shadows */
+  --shadow-lift: 0 24px 60px -28px rgba(34, 52, 40, 0.28);
+}
+
+:root {
+  --background: var(--color-linen);
+  --foreground: var(--color-inkg);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background: var(--color-linen);
+}
+
+body {
+  position: relative;
+  background:
+    radial-gradient(130% 100% at 82% -8%, rgba(192, 114, 74, 0.08), transparent 55%),
+    radial-gradient(120% 90% at 0% 0%, rgba(251, 250, 245, 0.6), transparent 45%),
+    var(--color-linen);
+  color: var(--color-inkg);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern", "liga", "calt";
+  overflow-x: clip;
+}
+
+/* Fine paper grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+::selection {
+  background: var(--color-antique);
+  color: var(--color-ivory-2);
+}
+
+/* Divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-stone) 12%,
+    var(--color-stone) 88%,
+    transparent
+  );
+}
+
+/* Eyebrow / kicker */
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+/* Fluid display type */
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.9rem, 7.4vw, 7rem);
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.012em;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+}
+.display-md {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+}
+
+/* Antique gold gradient text */
+.text-antique-gradient {
+  background: linear-gradient(100deg, var(--color-antique) 0%, var(--color-antique-soft) 45%, var(--color-antique) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gold-gradient { /* legacy alias for inner pages */
+  background: linear-gradient(100deg, var(--color-gold) 0%, var(--color-gold-bright) 45%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 2px;
+  padding: 1rem 2.1rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  transition: all 0.5s var(--ease-out-expo);
+}
+/* Terrarium antique-gold button (homepage + frame) */
+.btn-terra {
+  background: var(--color-antique);
+  color: var(--color-ivory-2);
+  box-shadow: 0 12px 30px -16px rgba(141, 106, 47, 0.7);
+}
+.btn-terra:hover {
+  background: var(--color-bronze);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -16px rgba(141, 106, 47, 0.55);
+}
+.btn-terra-ghost {
+  border: 1px solid var(--color-stone);
+  color: var(--color-inkg);
+}
+.btn-terra-ghost:hover {
+  border-color: var(--color-antique);
+  color: var(--color-bronze);
+}
+/* Legacy crimson button (inner pages) */
+.btn-primary {
+  background: var(--color-crimson);
+  color: var(--color-paper-2);
+  box-shadow: 0 12px 30px -14px rgba(156, 26, 26, 0.7);
+}
+.btn-primary:hover {
+  background: var(--color-crimson-bright);
+  transform: translateY(-2px);
+}
+.btn-ghost { border: 1px solid var(--color-line); color: var(--color-ink); }
+.btn-ghost:hover { border-color: var(--color-crimson); color: var(--color-crimson); }
+
+/* Arrow links */
+.arrow-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 500;
+}
+.arrow-link .arrow { transition: transform 0.5s var(--ease-out-expo), color 0.4s ease; }
+.arrow-link:hover .arrow { transform: translateX(6px); color: var(--color-bronze); }
+
+/* Card lift */
+.card-lift {
+  transition: transform 0.55s var(--ease-out-expo), box-shadow 0.55s var(--ease-out-expo), background-color 0.5s ease;
+}
+.card-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+
+/* Glass panel (terrarium) */
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* Slow light reflection sweeping across the glass every ~9s */
+@keyframes glass-sheen {
+  0%   { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+  12%  { opacity: 0.55; }
+  30%  { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+  100% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+}
+.glass-sheen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: glass-sheen 9s var(--ease-out-expo) infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .grain, .glass-sheen { display: none; }
+}

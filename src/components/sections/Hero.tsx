@@ -1,0 +1,122 @@
+import { motion } from "framer-motion";
+import Link from "@/components/AppLink";
+import { RevealWords } from "@/components/motion/Reveal";
+import { ArrowIcon } from "@/components/ui";
+import { hero, brand } from "@/lib/content";
+import TerrariumEmblem from "@/components/TerrariumEmblem";
+
+const WHY_HREF = "/why-regis-and-savoy";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+export default function Hero() {
+  return (
+    <section
+      data-bg="#e6d6c2"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden pb-12 pt-32"
+      style={{ backgroundColor: "#e6d6c2" }}
+    >
+      {/* soft warm glow behind the terrarium — gentle depth, uniform cream tone */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_74%_38%,rgba(250,244,233,0.7),transparent_62%)]" />
+
+      <div className="relative mx-auto grid w-full max-w-[1400px] flex-1 items-center gap-10 px-[var(--spacing-gutter)] lg:grid-cols-[1fr_1.6fr]">
+        {/* Copy */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+            className="mb-8 flex items-center gap-4"
+          >
+            <span className="h-px w-12 bg-gradient-to-r from-copper to-transparent" />
+            <span className="eyebrow text-copper font-medium">{brand.tagline}</span>
+          </motion.div>
+
+          <h1
+            className="display-xl text-inkg font-serif"
+            style={{ fontSize: "clamp(1.7rem, 2.9vw, 2.35rem)", lineHeight: 1.12 }}
+          >
+            <span className="block whitespace-nowrap">
+              <RevealWords text={hero.headlineLine1} delay={0.15} />
+            </span>
+            <span className="block whitespace-nowrap italic text-copper">
+              <RevealWords text={hero.headlineLine2} delay={0.4} />
+            </span>
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: EASE, delay: 0.8 }}
+            className="mt-7 max-w-xl font-[var(--font-display)] text-xl italic leading-snug text-copper-dark"
+          >
+            {hero.sub}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: EASE, delay: 0.95 }}
+            className="mt-6 max-w-xl text-base leading-relaxed text-inkg-soft"
+          >
+            {hero.lead}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: EASE, delay: 1.05 }}
+            className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3"
+          >
+            <Link href={hero.ctas[0].href} className="btn btn-terra group bg-copper hover:bg-copper-dark">
+              {hero.ctas[0].label}
+              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href={hero.ctas[1].href}
+              className="group flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-inkg transition-colors duration-300 hover:text-copper"
+            >
+              {hero.ctas[1].label}
+              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Terrarium emblem — annotations reveal on hover, click opens the framework */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: EASE, delay: 0.3 }}
+          className="flex justify-center"
+        >
+          <TerrariumEmblem href={WHY_HREF} />
+        </motion.div>
+      </div>
+
+      {/* Meta strip */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 1 }}
+        className="relative mx-auto mt-8 flex w-full max-w-[1400px] items-end justify-between px-[var(--spacing-gutter)]"
+      >
+        <p className="flex items-center gap-3 whitespace-nowrap text-[0.68rem] uppercase tracking-[0.22em] text-inkg/55">
+          <span className="h-px w-8 shrink-0 bg-copper/45" />
+          <span>
+            An affiliate of{" "}
+            <span className="font-medium text-copper-dark">{brand.parent}</span>
+          </span>
+        </p>
+        <span className="hidden flex-col items-center gap-2 text-[0.62rem] uppercase tracking-[0.3em] text-sage sm:flex">
+          Scroll
+          <motion.span
+            animate={{ scaleY: [0.3, 1, 0.3] }}
+            style={{ transformOrigin: "top" }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+            className="h-8 w-px bg-gradient-to-b from-antique to-transparent"
+          />
+        </span>
+      </motion.div>
+    </section>
+  );
+}

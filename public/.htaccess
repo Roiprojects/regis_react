@@ -1,0 +1,22 @@
+# Regis and Savoy — static export hosting (Apache)
+# Safe to leave in place on Nginx/other hosts (simply ignored).
+
+# Serve the branded 404 page for missing routes.
+ErrorDocument 404 /404.html
+
+# Directory requests resolve to their index.html (matches trailingSlash export).
+DirectoryIndex index.html
+
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Long-cache the hashed build assets (safe: filenames change on every build).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+</IfModule>
