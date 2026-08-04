@@ -11,7 +11,7 @@ export default function ContactPage() {
         eyebrow="Contact Us"
         title={contact.title}
         intro={contact.intro}
-        accent="purple.png"
+        accent="redgreen.png"
       />
 
       <section className="pb-32">
