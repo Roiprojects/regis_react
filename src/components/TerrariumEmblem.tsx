@@ -52,7 +52,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
                 x2={101}
                 y2={a.dotY}
                 stroke="#c0724a"
-                strokeWidth="0.3"
+                strokeWidth="0.2"
                 strokeDasharray="1.2 1"
                 variants={{
                   rest: { opacity: 0, pathLength: 0 },
@@ -66,7 +66,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
                 key={a.keyword + "-d"}
                 cx={a.dotX}
                 cy={a.dotY}
-                r={0.7}
+                r={0.5}
                 fill="#c0724a"
                 variants={{ rest: { opacity: 0 }, show: { opacity: 1 } }}
                 transition={{ duration: 0.3, delay: i * 0.06 + 0.1 }}

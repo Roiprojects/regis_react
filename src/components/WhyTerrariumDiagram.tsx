@@ -48,21 +48,21 @@ export default function WhyTerrariumDiagram() {
                 <motion.circle
                   cx={overallDotX}
                   cy={a.dotY}
-                  r={0.85}
+                  r={0.55}
                   fill="#C0724A"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, ease: EASE, delay: i * 0.08 + 0.2 }}
                 />
-                {/* Solid Copper Horizontal Connector Line */}
+                {/* Thin Solid Copper Horizontal Connector Line */}
                 <motion.line
                   x1={overallDotX}
                   y1={a.dotY}
                   x2={lineEndX}
                   y2={a.dotY}
                   stroke="#C0724A"
-                  strokeWidth="0.4"
+                  strokeWidth="0.2"
                   initial={{ pathLength: 0, opacity: 0 }}
                   whileInView={{ pathLength: 1, opacity: 1 }}
                   viewport={{ once: true }}
