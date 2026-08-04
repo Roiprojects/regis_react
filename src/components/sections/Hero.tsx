@@ -100,7 +100,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: EASE, delay: 0.3 }}
-          className="flex flex-1 items-center justify-center lg:justify-start"
+          className="flex flex-1 items-center justify-center lg:justify-center lg:pl-12"
         >
           <TerrariumEmblem href={WHY_HREF} />
         </motion.div>
