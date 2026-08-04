@@ -23,7 +23,7 @@ export default function Lifecycle() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.08 }}
-              className="group relative bg-ivory-2 p-8 transition-colors duration-500 hover:bg-forest"
+              className="group relative bg-[#efe4ce] p-8 transition-colors duration-500 hover:bg-forest"
             >
               <h3 className="font-[var(--font-display)] text-2xl text-copper transition-colors duration-500 group-hover:text-ivory-2">
                 {stage.title}
