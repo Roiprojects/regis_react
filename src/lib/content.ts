@@ -16,9 +16,9 @@ export const brand = {
 export const hero = {
   headlineLine1: "A corporate advisory practice",
   headlineLine2: "built on trust",
-  sub: "Integrated Legal, Governance, Compliance and Strategic Advisory Solutions for Businesses.",
+  sub: "Integrated Legal, Governance, Compliance & Strategic Solutions",
   lead:
-    "At Regis and Savoy Corporate Services LLP, we help businesses navigate complex legal, regulatory, and strategic challenges through practical, business-focused advisory services. From business formation and corporate restructuring to governance, compliance, private equity transactions, risk management, and dispute resolution, we provide integrated solutions that enable businesses to grow with confidence.",
+    "Regis & Savoy Corporate Services LLP brings together legal, regulatory, governance, and strategic capabilities to address the complexities of modern business. We work alongside businesses on matters that shape their structure, transactions, risk, and long-term direction—providing considered counsel, commercial perspective, and disciplined execution at every stage of growth.",
   ctas: [
     { label: "Explore Our Services", href: "/services" },
     { label: "Contact Our Experts", href: "/contact" },
@@ -73,7 +73,7 @@ export const servicesIntro = {
   eyebrow: "Our Services",
   title: "Comprehensive Corporate Advisory Services",
   intro:
-    "Whether you are establishing a new business, expanding operations, attracting investment, or strengthening governance, our services are designed to support your business at every stage.",
+    "Our integrated corporate solutions span structuring, transactions, governance, compliance, and risk—bringing together the legal and strategic capabilities businesses need to operate, evolve, and grow with confidence.",
 };
 
 export type ServiceDetail = {
@@ -191,6 +191,7 @@ export const services: Service[] = [
       "Enterprise Risk Management",
       "Forensic & Fraud Risk Advisory",
       "Business Continuity Planning",
+      "Crisis & Incident Management",
     ],
     details: [
       {
@@ -212,6 +213,10 @@ export const services: Service[] = [
       {
         name: "Business Continuity Planning",
         desc: "We create comprehensive continuity plans—including disaster recovery and crisis management protocols—so your organization can withstand unforeseen events and resume operations swiftly.",
+      },
+      {
+        name: "Crisis & Incident Management",
+        desc: "We help businesses respond to critical incidents by assessing legal, regulatory, operational, and reputational risks, coordinating responses, and advising management on immediate actions, stakeholder communication, and recovery to minimise disruption and protect the organisation.",
       },
     ],
   },

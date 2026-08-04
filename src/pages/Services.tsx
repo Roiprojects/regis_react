@@ -11,7 +11,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Comprehensive Corporate Advisory Services"
-        intro="Whether you are establishing a new business, expanding operations, attracting investment, or strengthening governance, our services are designed to support your business at every stage."
+        intro="Businesses encounter different challenges as they evolve. We provide the legal, governance, regulatory, and strategic perspective needed to navigate complexity, manage risk, and pursue opportunities with clarity."
         accent="teal.png"
       />
 
