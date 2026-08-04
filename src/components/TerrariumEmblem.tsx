@@ -26,11 +26,10 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         animate="rest"
         whileHover="show"
         transition={{ duration: 0.7, ease: EASE }}
-        className="flex items-center justify-center pr-4 sm:pr-8 lg:pr-32 xl:pr-36"
+        className="flex items-center justify-center"
       >
-        {/* Terrarium image with labels anchored to its right edge.
-            pr-28 (112px) / xl:pr-36 (144px) reserves layout space for right labels so they never clip. */}
-        <div className="relative w-[230px] shrink-0 sm:w-[280px] lg:w-[350px] xl:w-[380px]">
+        {/* Terrarium image with labels anchored to its right edge */}
+        <div className="relative w-[230px] shrink-0 sm:w-[290px] lg:w-[370px] xl:w-[410px]">
           <img
             src="/images/terrarium-element.png"
             alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
