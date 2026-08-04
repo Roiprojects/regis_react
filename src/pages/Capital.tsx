@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import Link from "@/components/AppLink";
 import { Reveal, RevealWords, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ArrowIcon } from "@/components/ui";
@@ -11,17 +10,7 @@ const GOLD = "#bf9b4e";
 
 export default function CapitalPage() {
   return (
-    <main
-      style={
-        {
-          backgroundColor: BEIGE,
-          // Distinct typography, scoped to this page only.
-          "--font-display": "var(--font-playfair), Georgia, serif",
-          "--font-sans": "var(--font-jost), system-ui, sans-serif",
-        } as CSSProperties
-      }
-      className="text-[#14213d]"
-    >
+    <main style={{ backgroundColor: BEIGE }} className="text-[#14213d]">
       {/* Hero — navy band sets the theme immediately */}
       <section
         style={{ backgroundColor: NAVY }}

@@ -49,12 +49,6 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-paper-3 py-28">
         <Botanical src="green.png" className="right-[5vw] top-44 hidden w-12 sm:block md:w-16" />
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
-          <Reveal>
-            <p className="eyebrow mb-6 text-crimson">Our Difference</p>
-            <h2 className="display-lg max-w-[18ch] text-ink">
-              {about.whyChooseTitle}
-            </h2>
-          </Reveal>
           <PentagonFunnel />
         </div>
       </section>

@@ -27,7 +27,7 @@ export default function ServicesPage() {
               <h2 className="display-md max-w-[16ch]">{contact.title}</h2>
               <Link
                 href="/contact"
-                className="group inline-flex shrink-0 items-center gap-3 rounded-sm bg-crimson px-8 py-4 text-sm uppercase tracking-[0.16em] text-paper transition-colors hover:bg-crimson-bright"
+                className="group inline-flex shrink-0 items-center gap-3 rounded-sm bg-copper px-8 py-4 text-sm uppercase tracking-[0.16em] text-paper transition-colors hover:bg-copper-dark"
               >
                 {contact.cta}
                 <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />

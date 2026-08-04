@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { services } from "@/lib/content";
 import { iconByService } from "@/components/TerraIcons";
@@ -43,6 +44,14 @@ export default function ServicesCarousel() {
   const [paused, setPaused] = useState(false);
   const s = services[active];
   const Icon = iconByService[s.id];
+  const { hash } = useLocation();
+
+  // Deep-link: /services#<service-id> opens that service.
+  useEffect(() => {
+    const id = decodeURIComponent(hash.replace("#", ""));
+    const idx = services.findIndex((sv) => sv.id === id);
+    if (idx >= 0) setActive(idx);
+  }, [hash]);
 
   useEffect(() => {
     if (paused) return;

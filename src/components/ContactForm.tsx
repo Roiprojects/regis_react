@@ -72,7 +72,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="group inline-flex items-center gap-3 rounded-sm bg-crimson px-9 py-4 text-sm uppercase tracking-[0.16em] text-paper transition-colors hover:bg-crimson-bright"
+              className="group inline-flex items-center gap-3 rounded-sm bg-copper px-9 py-4 text-sm uppercase tracking-[0.16em] text-paper transition-colors hover:bg-copper-dark"
             >
               Send enquiry
               <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />

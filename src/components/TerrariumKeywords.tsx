@@ -36,7 +36,7 @@ export default function TerrariumKeywords({
     <motion.ul
       variants={container}
       {...ulProps}
-      className="-ml-10 flex shrink-0 flex-col gap-5 sm:gap-6"
+      className="ml-2 flex shrink-0 flex-col gap-5 sm:gap-6"
     >
       {KEYWORDS.map((w) => (
         <motion.li
@@ -45,8 +45,8 @@ export default function TerrariumKeywords({
           className="flex items-center gap-3 whitespace-nowrap"
         >
           {/* connector line — reaches the vessel on its left */}
-          <span className="h-px w-16 shrink-0 bg-gradient-to-r from-copper to-copper/25" />
-          <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-inkg drop-shadow-[0_1px_2px_rgba(247,241,230,0.7)]">
+          <span className="h-px w-10 shrink-0 bg-gradient-to-r from-copper to-copper/25" />
+          <span className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-inkg drop-shadow-[0_1px_2px_rgba(247,241,230,0.7)]">
             {w}
           </span>
         </motion.li>
