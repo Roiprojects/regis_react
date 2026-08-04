@@ -42,7 +42,7 @@ export default function Hero() {
           {/* Headline */}
           <h1
             className="font-[var(--font-display)] text-inkg"
-            style={{ fontSize: "clamp(1.6rem, 2.6vw, 2.2rem)", lineHeight: 1.13 }}
+            style={{ fontSize: "clamp(2.4rem, 4vw, 3.6rem)", lineHeight: 1.08 }}
           >
             <span className="block whitespace-nowrap">
               <RevealWords text={hero.headlineLine1} delay={0.15} />

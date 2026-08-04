@@ -26,7 +26,7 @@ export default function PageHeader({
         </p>
         <h1
           className="display-xl max-w-[22ch] text-ink"
-          style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)", lineHeight: 1.12 }}
+          style={{ fontSize: "clamp(2.4rem, 4vw, 3.6rem)", lineHeight: 1.08 }}
         >
           <RevealWords text={title} delay={0.1} />
         </h1>

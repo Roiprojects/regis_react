@@ -29,7 +29,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         className="flex items-center justify-center"
       >
         {/* Terrarium image with labels anchored to its right edge */}
-        <div className="relative w-[320px] shrink-0 lg:w-[380px]">
+        <div className="relative w-[320px] shrink-0 lg:w-[420px]">
           <img
             src="/images/terrarium-element.png"
             alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
