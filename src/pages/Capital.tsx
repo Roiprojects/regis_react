@@ -41,7 +41,7 @@ export default function CapitalPage() {
           <Reveal>
             <div>
               <p className="eyebrow mb-6 text-[#bf9b4e]">{capital.aboutTitle}</p>
-              <p className="font-[var(--font-display)] text-[clamp(1.6rem,2.8vw,2.3rem)] italic leading-snug text-[#14213d]">
+              <p className="font-['Lora'] text-[clamp(1.6rem,2.8vw,2.3rem)] leading-snug text-[#14213d]">
                 &ldquo;{capital.belief}&rdquo;
               </p>
             </div>
