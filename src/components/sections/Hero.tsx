@@ -75,22 +75,22 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 1.05 }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+            className="mt-7 flex flex-row flex-nowrap items-center justify-center gap-2 sm:gap-3 lg:justify-start"
           >
             <Link
               href={hero.ctas[0].href}
-              className="btn btn-terra group whitespace-nowrap gap-2 bg-copper px-5 py-2.5 text-[0.68rem] hover:bg-copper-dark"
+              className="btn btn-terra group shrink-0 whitespace-nowrap gap-1.5 bg-copper px-3.5 py-2 text-[0.62rem] sm:px-4.5 sm:py-2.5 sm:text-[0.68rem] hover:bg-copper-dark"
             >
               {hero.ctas[0].label}
-              <ArrowIcon className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1 sm:h-4 sm:w-4" />
             </Link>
             <Link
               href={hero.ctas[1].href}
-              className="btn group whitespace-nowrap gap-2 border border-copper/50 px-5 py-2.5 text-[0.68rem] text-inkg
+              className="btn group shrink-0 whitespace-nowrap gap-1.5 border border-copper/50 px-3.5 py-2 text-[0.62rem] text-inkg sm:px-4.5 sm:py-2.5 sm:text-[0.68rem]
                          transition-colors duration-300 hover:border-copper hover:bg-copper/10"
             >
               {hero.ctas[1].label}
-              <ArrowIcon className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1 sm:h-4 sm:w-4" />
             </Link>
           </motion.div>
         </div>
