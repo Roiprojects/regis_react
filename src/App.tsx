@@ -66,6 +66,7 @@ function AnimatedRoutes() {
         <Route path="/capital" element={<Capital />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/why-regis-and-savoy" element={<Why />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </motion.div>
   );

@@ -13,7 +13,6 @@
    REGIS AND SAVOY
    Homepage theme: "The Terrarium — A Curated Corporate Ecosystem"
    Warm ivory + dark green, antique gold, deep bronze, soft stone.
-   (Legacy heritage tokens kept for the untouched inner pages.)
    ============================================================ */
 
 @theme {
@@ -63,7 +62,7 @@
   --color-night-2: #2b4234;
   --color-night-3: #3a5244;
 
-  /* Typography */
+  /* Typography — Standard Pages */
   --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
@@ -101,6 +100,39 @@ body {
   font-family: var(--font-sans);
   font-feature-settings: "kern", "liga", "calt";
   overflow-x: clip;
+}
+
+/* Headings on Standard Pages default to Cormorant Garamond */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* ---- Scoped Typography for Capital Page (Playfair Display for Headings, Jost for Body) ---- */
+.capital-page {
+  font-family: var(--font-jost), system-ui, sans-serif !important;
+}
+
+.capital-page p,
+.capital-page li,
+.capital-page span,
+.capital-page button,
+.capital-page a,
+.capital-page input,
+.capital-page div {
+  font-family: var(--font-jost), system-ui, sans-serif;
+}
+
+.capital-page h1,
+.capital-page h2,
+.capital-page h3,
+.capital-page h4,
+.capital-page h5,
+.capital-page h6,
+.capital-page .display-xl,
+.capital-page .display-lg,
+.capital-page .display-md,
+.capital-page .font-\[var\(--font-display\)\] {
+  font-family: var(--font-playfair), Georgia, serif !important;
 }
 
 /* Fine paper grain overlay */

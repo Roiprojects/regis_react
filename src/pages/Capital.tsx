@@ -10,7 +10,7 @@ const GOLD = "#bf9b4e";
 
 export default function CapitalPage() {
   return (
-    <main style={{ backgroundColor: BEIGE }} className="text-[#14213d]">
+    <main style={{ backgroundColor: BEIGE }} className="capital-page text-[#14213d]">
       {/* Hero — navy band sets the theme immediately */}
       <section
         style={{ backgroundColor: NAVY }}
@@ -77,7 +77,7 @@ export default function CapitalPage() {
       </section>
 
       {/* Capital services */}
-      <section className="py-24">
+      <section id="capital-services" className="py-24">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
             <p className="eyebrow mb-6 text-[#bf9b4e]">Capital Services</p>
@@ -117,7 +117,7 @@ export default function CapitalPage() {
         </div>
       </section>
 
-      {/* Broader advisory ecosystem — moved from the About page */}
+      {/* Broader advisory ecosystem */}
       <section className="py-10">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
@@ -128,10 +128,10 @@ export default function CapitalPage() {
                 stewardship, together through Regis and Savoy Capital.
               </p>
               <Link
-                href="/capital"
+                href="/contact"
                 className="group mt-8 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-[#14213d] transition-colors hover:text-[#bf9b4e]"
               >
-                Explore Regis and Savoy Capital
+                Connect With Our Capital Team
                 <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
               </Link>
             </div>
