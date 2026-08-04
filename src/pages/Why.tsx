@@ -17,7 +17,7 @@ export default function WhyPage() {
   return (
     <main className="bg-ivory text-inkg">
       {/* Hero — the framework */}
-      <section className="relative bg-gradient-to-b from-[#e6d8c1] via-[#efe4d2] to-[#f5efe4] pb-24 pt-36 md:pt-40">
+      <section className="relative bg-gradient-to-b from-[#e6d8c1] via-[#efe4d2] to-[#efe4ce] pb-24 pt-36 md:pt-40">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(58%_52%_at_74%_30%,rgba(255,251,244,0.75),transparent_62%)]" />
         <div className="relative mx-auto grid max-w-[1440px] items-center gap-10 px-6 sm:px-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12">
           <div>
@@ -31,7 +31,7 @@ export default function WhyPage() {
               <span className="block text-[clamp(1.9rem,3.8vw,3.1rem)] leading-[1.06]">
                 <RevealWords text="The Terrarium Framework" delay={0.15} />
               </span>
-              <span className="mt-3 block max-w-[22ch] text-[clamp(1.05rem,1.8vw,1.4rem)] font-normal italic leading-snug text-copper">
+              <span className="mt-3 block max-w-[22ch] text-[clamp(1.05rem,1.8vw,1.4rem)] font-normal leading-snug text-copper">
                 <RevealWords
                   text="An Integrated Approach to Corporate Advisory"
                   delay={0.4}
@@ -90,7 +90,7 @@ export default function WhyPage() {
 
           {/* Elegant close */}
           <Reveal delay={0.1}>
-            <p className="mt-20 text-center font-[var(--font-display)] text-[clamp(1.4rem,2.8vw,2.1rem)] italic leading-snug text-copper-dark">
+            <p className="mt-20 text-center font-[var(--font-display)] text-[clamp(1.4rem,2.8vw,2.1rem)] leading-snug text-copper-dark">
               A resilient business is a balanced ecosystem.
             </p>
           </Reveal>

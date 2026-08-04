@@ -47,7 +47,7 @@ export default function Hero() {
             <span className="block whitespace-nowrap">
               <RevealWords text={hero.headlineLine1} delay={0.15} />
             </span>
-            <span className="block whitespace-nowrap italic text-copper">
+            <span className="block whitespace-nowrap text-copper">
               <RevealWords text={hero.headlineLine2} delay={0.4} />
             </span>
           </h1>
@@ -57,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 0.8 }}
-            className="mt-5 font-[var(--font-display)] text-lg italic leading-snug text-copper-dark"
+            className="mt-5 font-[var(--font-display)] text-lg leading-snug text-copper-dark"
           >
             {hero.sub}
           </motion.p>
