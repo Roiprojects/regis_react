@@ -88,12 +88,7 @@ export default function WhyPage() {
             })}
           </div>
 
-          {/* Elegant close */}
-          <Reveal delay={0.1}>
-            <p className="mt-20 text-center font-[var(--font-display)] text-[clamp(1.4rem,2.8vw,2.1rem)] leading-snug text-copper-dark">
-              A resilient business is a balanced ecosystem.
-            </p>
-          </Reveal>
+
         </div>
       </section>
     </main>
