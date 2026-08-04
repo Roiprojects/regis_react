@@ -42,10 +42,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Difference — interactive pentagon funnel */}
+      {/* Our Difference — interactive reference image */}
       <section
-        className="py-24"
-        style={{ backgroundColor: "#f0e8d8" }}
+        className="py-16 md:py-24"
+        style={{ backgroundColor: "#f5e9d9" }}
       >
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <PentagonFunnel />
