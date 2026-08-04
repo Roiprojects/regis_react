@@ -393,6 +393,6 @@ export const contact = {
   email: "advisory@regisandsavoy.com",
   title: "Let's Build Your Business on a Strong Foundation",
   intro:
-    "Whether you are launching a new venture, restructuring your organisation, navigating regulatory requirements, or planning your next investment, our team is ready to support your business with practical, strategic, and legally sound solutions.",
+    "The right decisions require more than technical expertise. We combine commercial understanding with legal and strategic insight to help you address complexity with greater clarity.",
   cta: "Connect With Our Team",
 };
