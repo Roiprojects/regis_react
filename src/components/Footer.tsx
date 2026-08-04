@@ -12,6 +12,16 @@ export default function Footer() {
   const pathname = useLocation().pathname;
   const isCapital = pathname?.startsWith("/capital");
 
+  const handleServiceClick = (serviceId: string) => {
+    if (window.location.pathname === "/services") {
+      const target = document.getElementById("services-carousel") || document.getElementById(serviceId);
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer
       className={`relative overflow-hidden text-ivory-2 ${isCapital ? "" : "bg-forest"}`}
@@ -78,6 +88,7 @@ export default function Footer() {
               <li key={s.id}>
                 <Link
                   href={`/services#${s.id}`}
+                  onClick={() => handleServiceClick(s.id)}
                   className="text-sm text-ivory-2/70 transition-colors hover:text-copper-soft"
                 >
                   {s.title}

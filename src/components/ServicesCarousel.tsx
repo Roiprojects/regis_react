@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { services } from "@/lib/content";
@@ -38,19 +38,29 @@ const subItem: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
 };
 
-// Auto-advancing services carousel (dark theme) with manual control.
+// Auto-advancing services carousel (dark theme) with manual control & deep-link scrolling.
 export default function ServicesCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const s = services[active];
   const Icon = iconByService[s.id];
   const { hash } = useLocation();
 
-  // Deep-link: /services#<service-id> opens that service.
+  // Deep-link: /services#<service-id> opens that service & scrolls into view
   useEffect(() => {
     const id = decodeURIComponent(hash.replace("#", ""));
     const idx = services.findIndex((sv) => sv.id === id);
-    if (idx >= 0) setActive(idx);
+    if (idx >= 0) {
+      setActive(idx);
+      setTimeout(() => {
+        const target = containerRef.current || document.getElementById("services-carousel");
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      }, 120);
+    }
   }, [hash]);
 
   useEffect(() => {
@@ -66,7 +76,9 @@ export default function ServicesCarousel() {
 
   return (
     <div
-      className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]"
+      id="services-carousel"
+      ref={containerRef}
+      className="mx-auto max-w-[1400px] scroll-mt-28 px-[var(--spacing-gutter)]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
