@@ -77,22 +77,22 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: EASE, delay: 1.05 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-8 flex items-center gap-3"
           >
             <Link
               href={hero.ctas[0].href}
-              className="btn btn-terra group whitespace-nowrap bg-copper px-6 hover:bg-copper-dark"
+              className="btn btn-terra group whitespace-nowrap gap-2 bg-copper px-5 py-2.5 text-[0.68rem] hover:bg-copper-dark"
             >
               {hero.ctas[0].label}
-              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
+              <ArrowIcon className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
             <Link
               href={hero.ctas[1].href}
-              className="btn group whitespace-nowrap border border-copper/50 px-6 text-inkg
+              className="btn group whitespace-nowrap gap-2 border border-copper/50 px-5 py-2.5 text-[0.68rem] text-inkg
                          transition-colors duration-300 hover:border-copper hover:bg-copper/10"
             >
               {hero.ctas[1].label}
-              <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1" />
+              <ArrowIcon className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </div>

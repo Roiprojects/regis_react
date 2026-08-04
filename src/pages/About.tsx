@@ -1,8 +1,5 @@
-import Link from "@/components/AppLink";
 import PageHeader from "@/components/PageHeader";
 import { Reveal } from "@/components/motion/Reveal";
-import { ArrowIcon } from "@/components/ui";
-import Botanical from "@/components/Botanical";
 import PentagonFunnel from "@/components/PentagonFunnel";
 import { brand, about } from "@/lib/content";
 
@@ -45,35 +42,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why businesses choose us */}
-      <section className="relative overflow-hidden bg-paper-3 py-28">
-        <Botanical src="green.png" className="right-[5vw] top-44 hidden w-12 sm:block md:w-16" />
+      {/* Our Difference — interactive pentagon funnel */}
+      <section
+        className="py-24"
+        style={{ backgroundColor: "#f0e8d8" }}
+      >
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <PentagonFunnel />
-        </div>
-      </section>
-
-      {/* Affiliation note */}
-      <section className="py-28">
-        <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
-          <Reveal>
-            <div className="overflow-hidden rounded-sm border border-line bg-paper-2">
-              <div className="flex flex-col justify-center p-12 md:p-16">
-                <span className="mb-6 h-px w-12 bg-crimson" />
-                <p className="max-w-3xl font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-ink">
-                  A broader advisory ecosystem — corporate expertise and wealth
-                  stewardship, together through {brand.parent}.
-                </p>
-                <Link
-                  href="/capital"
-                  className="group mt-8 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:text-crimson"
-                >
-                  Explore Regis and Savoy Capital
-                  <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
-                </Link>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </section>
     </>

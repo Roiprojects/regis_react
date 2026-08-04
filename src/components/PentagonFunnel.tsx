@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { about } from "@/lib/content";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -49,14 +50,16 @@ const ICONS = [IconScales, IconUserSearch, IconLifecycle, IconTechnology, IconHa
 // Petal shape config — polygons computed for a flat-top pentagon (viewBox 100),
 // label anchor (% of emblem), and colours per step.
 const PETALS = [
-  { poly: "23,12.8 77,12.8 61.8,33.8 38.2,33.8", g: ["#7d151a", "#4f0a0e"], accent: "#e9c98f", badge: "#7d151a", lx: 50, ly: 16 },
-  { poly: "77,12.8 93.7,64.2 69,56.2 61.8,33.8", g: ["#a63f24", "#782914"], accent: "#edd4a6", badge: "#a63f24", lx: 79, ly: 38 },
-  { poly: "93.7,64.2 50,96 50,70 69,56.2", g: ["#b85e24", "#873e10"], accent: "#f0c689", badge: "#b85e24", lx: 68, ly: 78 },
-  { poly: "50,96 6.3,64.2 31,56.2 50,70", g: ["#c48325", "#8f5a12"], accent: "#f5d496", badge: "#c48325", lx: 32, ly: 78 },
-  { poly: "6.3,64.2 23,12.8 38.2,33.8 31,56.2", g: ["#7c6827", "#544516"], accent: "#dfc783", badge: "#7c6827", lx: 21, ly: 38 },
+  { poly: "23,12.8 77,12.8 61.8,33.8 38.2,33.8", g: ["#7d151a", "#4f0a0e"], gHover: ["#9e1a22", "#6b1014"], accent: "#e9c98f", badge: "#7d151a", lx: 50, ly: 16 },
+  { poly: "77,12.8 93.7,64.2 69,56.2 61.8,33.8", g: ["#a63f24", "#782914"], gHover: ["#c44c2b", "#8f3319"], accent: "#edd4a6", badge: "#a63f24", lx: 79, ly: 38 },
+  { poly: "93.7,64.2 50,96 50,70 69,56.2", g: ["#b85e24", "#873e10"], gHover: ["#d96f2b", "#a04d14"], accent: "#f0c689", badge: "#b85e24", lx: 68, ly: 78 },
+  { poly: "50,96 6.3,64.2 31,56.2 50,70", g: ["#c48325", "#8f5a12"], gHover: ["#e09c2d", "#a86a16"], accent: "#f5d496", badge: "#c48325", lx: 32, ly: 78 },
+  { poly: "6.3,64.2 23,12.8 38.2,33.8 31,56.2", g: ["#7c6827", "#544516"], gHover: ["#99802f", "#6a561e"], accent: "#dfc783", badge: "#7c6827", lx: 21, ly: 38 },
 ];
 
 export default function PentagonFunnel() {
+  const [hoveredPetal, setHoveredPetal] = useState<number | null>(null);
+
   return (
     <div className="mt-6 grid items-center gap-10 lg:grid-cols-[0.82fr_1.15fr_0.95fr] lg:gap-12">
       {/* ── Header ── */}
@@ -86,7 +89,11 @@ export default function PentagonFunnel() {
         transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
         className="relative mx-auto aspect-square w-full max-w-[440px]"
       >
-        <svg viewBox="0 0 100 100" className="h-full w-full drop-shadow-[0_20px_40px_rgba(80,20,15,0.22)]">
+        <svg
+          viewBox="0 0 100 100"
+          className="h-full w-full drop-shadow-[0_20px_40px_rgba(80,20,15,0.22)]"
+          style={{ overflow: "visible" }}
+        >
           <defs>
             {PETALS.map((p, i) => (
               <linearGradient key={i} id={`petal-${i}`} x1="0" y1="0" x2="0.4" y2="1">
@@ -94,15 +101,37 @@ export default function PentagonFunnel() {
                 <stop offset="1" stopColor={p.g[1]} />
               </linearGradient>
             ))}
+            {PETALS.map((p, i) => (
+              <linearGradient key={`h-${i}`} id={`petal-hover-${i}`} x1="0" y1="0" x2="0.4" y2="1">
+                <stop offset="0" stopColor={p.gHover[0]} />
+                <stop offset="1" stopColor={p.gHover[1]} />
+              </linearGradient>
+            ))}
+            {/* Drop shadow filter for hovered petal */}
+            <filter id="petal-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="rgba(255,200,120,0.55)" />
+            </filter>
           </defs>
+
           {PETALS.map((p, i) => (
-            <polygon
+            <motion.polygon
               key={i}
               points={p.poly}
               fill={`url(#petal-${i})`}
               stroke="#f3ead8"
               strokeWidth="1.4"
               strokeLinejoin="round"
+              style={{ cursor: "pointer" }}
+              onHoverStart={() => setHoveredPetal(i)}
+              onHoverEnd={() => setHoveredPetal(null)}
+              animate={{
+                fill: hoveredPetal === i ? `url(#petal-hover-${i})` : `url(#petal-${i})`,
+                scale: hoveredPetal === i ? 1.045 : 1,
+                filter: hoveredPetal === i ? "url(#petal-glow)" : "none",
+              }}
+              transition={{ duration: 0.35, ease: EASE }}
+              transformOrigin="50px 50px"
+              whileHover={{ scale: 1.045 }}
             />
           ))}
           <circle cx="50" cy="50" r="18.5" fill="#f7eedb" stroke="#e2d0aa" strokeWidth="0.7" />
@@ -113,10 +142,15 @@ export default function PentagonFunnel() {
           const p = PETALS[i];
           const Icon = ICONS[i];
           return (
-            <div
+            <motion.div
               key={v.title}
               style={{ left: `${p.lx}%`, top: `${p.ly}%` }}
-              className="absolute flex w-[27%] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1 text-center"
+              className="pointer-events-none absolute flex w-[27%] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1 text-center"
+              animate={{
+                scale: hoveredPetal === i ? 1.12 : 1,
+                opacity: hoveredPetal !== null && hoveredPetal !== i ? 0.6 : 1,
+              }}
+              transition={{ duration: 0.3, ease: EASE }}
             >
               <span className="font-[var(--font-display)] text-[0.95rem]" style={{ color: p.accent }}>
                 {String(i + 1).padStart(2, "0")}
@@ -127,7 +161,7 @@ export default function PentagonFunnel() {
               <span className="font-[var(--font-display)] text-[0.6rem] font-medium leading-tight text-[#fcf6ea]">
                 {v.title}
               </span>
-            </div>
+            </motion.div>
           );
         })}
 
@@ -150,14 +184,21 @@ export default function PentagonFunnel() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.5, ease: EASE, delay: i * 0.06 }}
-            className="flex items-start gap-4"
+            className="flex cursor-default items-start gap-4 rounded-lg px-3 py-2 transition-colors duration-300"
+            style={{
+              backgroundColor: hoveredPetal === i ? `${PETALS[i].badge}18` : "transparent",
+            }}
+            onMouseEnter={() => setHoveredPetal(i)}
+            onMouseLeave={() => setHoveredPetal(null)}
           >
-            <span
+            <motion.span
               className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-[var(--font-display)] text-sm text-paper"
               style={{ backgroundColor: PETALS[i].badge }}
+              animate={{ scale: hoveredPetal === i ? 1.15 : 1 }}
+              transition={{ duration: 0.3, ease: EASE }}
             >
               {String(i + 1).padStart(2, "0")}
-            </span>
+            </motion.span>
             <p className="text-[0.92rem] leading-relaxed text-ink-soft">{v.body}</p>
           </motion.div>
         ))}

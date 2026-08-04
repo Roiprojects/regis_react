@@ -117,6 +117,28 @@ export default function CapitalPage() {
         </div>
       </section>
 
+      {/* Broader advisory ecosystem — moved from the About page */}
+      <section className="py-10">
+        <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
+          <Reveal>
+            <div className="rounded-sm border border-[#14213d]/12 bg-[#efe4ce] p-12 md:p-16">
+              <span className="mb-6 block h-px w-12" style={{ backgroundColor: GOLD }} />
+              <p className="max-w-3xl font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-[#14213d]">
+                A broader advisory ecosystem — corporate expertise and wealth
+                stewardship, together through Regis and Savoy Capital.
+              </p>
+              <Link
+                href="/capital"
+                className="group mt-8 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-[#14213d] transition-colors hover:text-[#bf9b4e]"
+              >
+                Explore Regis and Savoy Capital
+                <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Quote / CTA — navy card */}
       <section className="py-24">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
