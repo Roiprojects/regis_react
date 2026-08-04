@@ -17,9 +17,9 @@ export default function WhyPage() {
   return (
     <main className="bg-ivory text-inkg">
       {/* Hero — the framework */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#e6d8c1] via-[#efe4d2] to-[#f5efe4] pb-24 pt-40">
+      <section className="relative bg-gradient-to-b from-[#e6d8c1] via-[#efe4d2] to-[#f5efe4] pb-24 pt-36 md:pt-40">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(58%_52%_at_74%_30%,rgba(255,251,244,0.75),transparent_62%)]" />
-        <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 px-[var(--spacing-gutter)] lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="relative mx-auto grid max-w-[1440px] items-center gap-10 px-6 sm:px-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12">
           <div>
             <Reveal>
               <p className="eyebrow mb-8 flex items-center gap-3 text-copper-dark">
