@@ -121,15 +121,16 @@ export default function CapitalPage() {
       <section className="py-10">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
-            <div className="rounded-sm border border-[#14213d]/12 bg-[#efe4ce] p-12 md:p-16">
+            <div className="rounded-sm p-12 md:p-16" style={{ backgroundColor: NAVY }}>
               <span className="mb-6 block h-px w-12" style={{ backgroundColor: GOLD }} />
-              <p className="max-w-3xl font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-[#14213d]">
+              <p className="max-w-3xl font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-white">
                 A broader advisory ecosystem — corporate expertise and wealth
                 stewardship, together through Regis and Savoy Capital.
               </p>
               <Link
                 href="/contact"
-                className="group mt-8 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-[#14213d] transition-colors hover:text-[#bf9b4e]"
+                className="group mt-8 inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] transition-colors hover:text-[#bf9b4e]"
+                style={{ color: GOLD }}
               >
                 Connect With Our Capital Team
                 <ArrowIcon className="transition-transform duration-500 group-hover:translate-x-1.5" />
@@ -143,11 +144,8 @@ export default function CapitalPage() {
       <section className="py-24">
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
-            <div
-              style={{ backgroundColor: NAVY }}
-              className="flex flex-col items-start justify-between gap-8 rounded-sm p-12 text-[#f4ecdb] md:flex-row md:items-center md:p-16"
-            >
-              <p className="max-w-[22ch] font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] italic leading-snug text-[#d8bd7e]">
+            <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+              <p className="max-w-[22ch] font-['Lora'] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-[#d8bd7e]">
                 &ldquo;{capital.quote}&rdquo;
               </p>
               <Link
