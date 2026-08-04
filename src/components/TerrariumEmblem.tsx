@@ -89,6 +89,29 @@ export default function TerrariumEmblem({ href }: { href: string }) {
               {a.keyword}
             </motion.div>
           ))}
+
+          {/* Interactive prompt badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.7, ease: EASE }}
+            className="absolute -bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2.5 whitespace-nowrap rounded-full border border-copper/40 bg-[#f4ebd9]/95 px-4 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-copper-dark shadow-[0_8px_24px_rgba(80,50,20,0.18)] backdrop-blur-md transition-all duration-300 group-hover:border-copper group-hover:bg-copper group-hover:text-ivory-2 group-hover:shadow-[0_12px_28px_rgba(80,50,20,0.32)]"
+          >
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-copper opacity-75 group-hover:bg-ivory-2" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-copper group-hover:bg-ivory-2" />
+            </span>
+            <span>Click to Explore Framework</span>
+            <svg
+              className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2.5"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </motion.div>
         </div>
       </motion.div>
     </Link>
