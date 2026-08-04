@@ -124,7 +124,7 @@ export default function Home() {
       >
         <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)] text-center">
           <Reveal>
-            <p className="text-antique-gradient font-[var(--font-display)] text-[clamp(2rem,5.5vw,4.6rem)] italic leading-[1.08]">
+            <p className="text-antique-gradient font-[var(--font-display)] text-[clamp(1.4rem,5.5vw,4.6rem)] italic leading-[1.08]">
               A resilient business is a balanced ecosystem.
             </p>
             <p className="mx-auto mt-8 max-w-md text-sm uppercase tracking-[0.24em] text-ivory-2/45">

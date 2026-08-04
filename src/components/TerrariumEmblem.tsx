@@ -29,7 +29,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
         className="flex items-center justify-center"
       >
         {/* Terrarium image with labels anchored to its right edge */}
-        <div className="relative w-[320px] shrink-0 lg:w-[420px]">
+        <div className="relative w-[230px] shrink-0 sm:w-[290px] lg:w-[420px]">
           <img
             src="/images/terrarium-element.png"
             alt="A curated glass terrarium — the Regis and Savoy corporate ecosystem"
@@ -37,11 +37,11 @@ export default function TerrariumEmblem({ href }: { href: string }) {
           />
           <span className="glass-sheen" />
 
-          {/* connector lines — from the element straight out to the image edge */}
+          {/* connector lines — hidden on mobile, visible on lg+ hover */}
           <svg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
-            className="pointer-events-none absolute inset-0 h-full w-full"
+            className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
             style={{ overflow: "visible" }}
           >
             {ANNOTATIONS.map((a, i) => (
@@ -74,7 +74,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
             ))}
           </svg>
 
-          {/* labels — at each line's height, just outside the image (no numbers) */}
+          {/* labels — hidden on mobile, shown on lg+ hover */}
           {ANNOTATIONS.map((a, i) => (
             <motion.div
               key={a.keyword}
@@ -84,7 +84,7 @@ export default function TerrariumEmblem({ href }: { href: string }) {
                 show: { opacity: 1, x: 0 },
               }}
               transition={{ duration: 0.4, ease: EASE, delay: i * 0.06 + 0.05 }}
-              className="absolute ml-2.5 -translate-y-1/2 whitespace-nowrap font-[var(--font-sans)] text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#3a2e26] transition-colors group-hover:text-[#9e532d]"
+              className="absolute ml-2.5 hidden -translate-y-1/2 whitespace-nowrap font-[var(--font-sans)] text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#3a2e26] transition-colors group-hover:text-[#9e532d] lg:block"
             >
               {a.keyword}
             </motion.div>

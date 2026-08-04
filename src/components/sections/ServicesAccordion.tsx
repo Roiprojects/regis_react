@@ -81,7 +81,7 @@ export default function ServicesAccordion({
                   transition={{ duration: 0.5, ease: EASE }}
                   className="overflow-hidden"
                 >
-                  <div className="grid gap-8 pb-8 pl-11 md:grid-cols-[1fr_1.2fr]">
+                  <div className="grid gap-8 pb-8 pl-3 sm:pl-11 md:grid-cols-[1fr_1.2fr]">
                     <p className={`max-w-md text-sm leading-relaxed ${summaryClass}`}>
                       {s.summary}
                     </p>

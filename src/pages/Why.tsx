@@ -28,7 +28,7 @@ export default function WhyPage() {
               </p>
             </Reveal>
             <h1 className="display-xl text-inkg">
-              <span className="block text-[clamp(2.4rem,4vw,3.6rem)] leading-[1.08]">
+              <span className="block text-[clamp(1.7rem,4vw,3.6rem)] leading-[1.08]">
                 <RevealWords text="The Terrarium Framework" delay={0.15} />
               </span>
               <span className="mt-3 block max-w-[22ch] text-[clamp(1.05rem,1.8vw,1.4rem)] font-normal leading-snug text-copper">
@@ -60,7 +60,7 @@ export default function WhyPage() {
               <p className="eyebrow text-copper">The Ecosystem</p>
               <h2
                 className="mt-5 display-lg leading-tight text-inkg"
-                style={{ fontSize: "clamp(2.4rem, 4vw, 3.6rem)" }}
+                style={{ fontSize: "clamp(1.7rem, 4vw, 3.6rem)" }}
               >
                 {whyTerrarium.setsApartTitle}
               </h2>

@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="border-b border-white/10 px-[var(--spacing-gutter)] py-24">
           <div className="mx-auto max-w-[1400px]">
             <Reveal>
-              <p className="max-w-4xl font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] leading-[1.15] text-ivory-2">
+              <p className="max-w-4xl font-[var(--font-display)] text-[clamp(1.3rem,4vw,3.2rem)] leading-[1.15] text-ivory-2">
                 &ldquo;Every resilient business is built within a carefully
                 designed ecosystem of governance, compliance, structure and{" "}
                 <span className="italic text-copper-soft">strategic guidance.</span>&rdquo;
@@ -53,7 +53,7 @@ export default function Footer() {
       )}
 
       {/* Columns */}
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-[var(--spacing-gutter)] py-20 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+      <div className="mx-auto grid max-w-[1400px] gap-12 px-[var(--spacing-gutter)] py-20 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
         <div>
           <Wordmark tone="light" size="md" />
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-ivory-2/55">
