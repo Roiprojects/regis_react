@@ -23,10 +23,10 @@ export default function CapitalPage() {
             {capital.eyebrow}
           </p>
           <h1
-            className="display-xl max-w-[22ch] text-[#f4ecdb]"
+            className="display-xl font-[var(--font-display)] max-w-[22ch] text-[#f4ecdb]"
             style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)", lineHeight: 1.12 }}
           >
-            <RevealWords text={capital.title} delay={0.1} />
+            <RevealWords text={capital.title} delay={0.1} className="font-[var(--font-display)]" />
           </h1>
           <div className="mt-10 grid max-w-4xl gap-6 lg:grid-cols-2">
             <p className="text-lg leading-relaxed text-[#f4ecdb]/75">{capital.intro[0]}</p>

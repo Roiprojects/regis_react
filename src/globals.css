@@ -129,10 +129,17 @@ h1, h2, h3, h4, h5, h6 {
 .capital-page h4,
 .capital-page h5,
 .capital-page h6,
+.capital-page h1 *,
+.capital-page h2 *,
+.capital-page h3 *,
 .capital-page .display-xl,
+.capital-page .display-xl *,
 .capital-page .display-lg,
+.capital-page .display-lg *,
 .capital-page .display-md,
-.capital-page .font-\[var\(--font-display\)\] {
+.capital-page .display-md *,
+.capital-page .font-\[var\(--font-display\)\],
+.capital-page .font-\[var\(--font-display\)\] * {
   font-family: var(--font-playfair), Georgia, serif !important;
 }
 
