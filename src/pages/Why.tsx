@@ -67,11 +67,17 @@ export default function WhyPage() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {whyTerrarium.setsApart.map((item, i) => {
               const Icon = SETS_ICONS[i % SETS_ICONS.length];
+              const gridSpanClass =
+                i < 3
+                  ? "lg:col-span-2"
+                  : i === 4
+                  ? "sm:col-span-2 lg:col-span-3"
+                  : "lg:col-span-3";
               return (
-                <Reveal key={item.title} delay={i * 0.06}>
+                <Reveal key={item.title} delay={i * 0.06} className={gridSpanClass}>
                   <div className="group flex h-full flex-col justify-between rounded-xl border border-stone/70 bg-[#efe4ce]/70 p-6 sm:p-7 shadow-[0_4px_16px_rgba(80,50,20,0.06)] transition-all duration-500 hover:border-copper/40 hover:bg-[#efe4ce] hover:shadow-[0_10px_28px_rgba(80,50,20,0.12)]">
                     <div>
                       <div className="flex items-center justify-between">
