@@ -65,6 +65,10 @@ export const whyTerrarium = {
       title: "Governance-Driven Growth",
       desc: "Helping organisations strengthen governance frameworks, manage regulatory obligations, and build resilient, investment-ready businesses.",
     },
+    {
+      title: "Risk Management & Strategic Advisory",
+      desc: "Strengthening businesses against legal, operational, financial, and strategic risks through proactive risk management. We support informed decision-making, resilience, and continuity through due diligence, crisis management, and robust risk frameworks.",
+    },
   ],
 };
 

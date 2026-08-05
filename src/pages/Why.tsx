@@ -31,7 +31,7 @@ export default function WhyPage() {
               <span className="block text-[clamp(1.7rem,4vw,3.6rem)] leading-[1.08]">
                 <RevealWords text="The Terrarium Framework" delay={0.15} />
               </span>
-              <span className="mt-3 block w-full max-w-none text-[clamp(0.95rem,1.45vw,1.3rem)] font-normal leading-snug text-copper sm:whitespace-nowrap">
+              <span className="mt-4 block w-full max-w-none font-[var(--font-display)] text-[clamp(1.1rem,1.7vw,1.45rem)] font-medium italic tracking-wide text-copper-dark sm:whitespace-nowrap">
                 <RevealWords
                   text="An Integrated Approach to Corporate Advisory"
                   delay={0.4}
@@ -51,7 +51,7 @@ export default function WhyPage() {
         </div>
       </section>
 
-      {/* What sets us apart — compact high-end grid */}
+      {/* What sets us apart — compact high-end 3x2 grid */}
       <section className="relative overflow-hidden bg-ivory py-16 md:py-20">
         <Botanical src="green.png" className="right-[5vw] top-20 hidden w-12 sm:block md:w-16" />
         <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
@@ -67,25 +67,16 @@ export default function WhyPage() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyTerrarium.setsApart.map((item, i) => {
               const Icon = SETS_ICONS[i % SETS_ICONS.length];
-              const gridSpanClass =
-                i < 3
-                  ? "lg:col-span-2"
-                  : i === 4
-                  ? "sm:col-span-2 lg:col-span-3"
-                  : "lg:col-span-3";
               return (
-                <Reveal key={item.title} delay={i * 0.06} className={gridSpanClass}>
+                <Reveal key={item.title} delay={i * 0.06}>
                   <div className="group flex h-full flex-col justify-between rounded-xl border border-stone/70 bg-[#efe4ce]/70 p-6 sm:p-7 shadow-[0_4px_16px_rgba(80,50,20,0.06)] transition-all duration-500 hover:border-copper/40 hover:bg-[#efe4ce] hover:shadow-[0_10px_28px_rgba(80,50,20,0.12)]">
                     <div>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center">
                         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-copper/40 bg-ivory-2 p-2.5 text-copper shadow-[0_3px_10px_rgba(80,60,30,0.08)] transition-colors duration-500 group-hover:border-copper group-hover:text-copper-dark">
                           <Icon />
-                        </span>
-                        <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-copper/70">
-                          0{i + 1}
                         </span>
                       </div>
                       <h3 className="mt-4 font-[var(--font-display)] text-xl font-medium leading-snug text-inkg transition-colors group-hover:text-copper-dark">
