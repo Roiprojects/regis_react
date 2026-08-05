@@ -41,7 +41,7 @@ export default function CapitalPage() {
           <Reveal>
             <div>
               <p className="eyebrow mb-6 text-[#bf9b4e]">{capital.aboutTitle}</p>
-              <p className="font-['Lora'] text-[clamp(1.6rem,2.8vw,2.3rem)] leading-snug text-[#14213d]">
+              <p className="font-[var(--font-display)] text-[clamp(1.6rem,2.8vw,2.3rem)] leading-snug text-[#14213d]">
                 &ldquo;{capital.belief}&rdquo;
               </p>
             </div>
@@ -145,9 +145,10 @@ export default function CapitalPage() {
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-              <p className="max-w-[22ch] font-['Lora'] text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-[#d8bd7e]">
-                &ldquo;{capital.quote}&rdquo;
-              </p>
+              <h2 className="max-w-2xl font-[var(--font-display)] text-[clamp(1.5rem,2.6vw,2.2rem)] font-medium leading-snug text-black">
+                <span className="block">&ldquo;Building, preserving, and</span>
+                <span className="block">transitioning wealth across generations.&rdquo;</span>
+              </h2>
               <Link
                 href="/contact"
                 style={{ backgroundColor: GOLD }}
