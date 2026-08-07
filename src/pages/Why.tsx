@@ -81,25 +81,27 @@ export default function WhyPage() {
               </p>
             </Reveal>
 
-            {/* Clipart collage — 4 succulents, scattered */}
+            {/* Clipart collage — staggered two-column */}
             <Reveal delay={0.18}>
-              <div className="relative mx-auto w-full max-w-[210px] lg:max-w-[230px]" style={{ aspectRatio: "4 / 5" }}>
-                {/* dominant — green, top-left anchor, large */}
-                <img src="/images/succulents/green.png" aria-hidden
-                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.2)]"
-                  style={{ width: "58%", top: "2%", left: "0%", transform: "rotate(-13deg)" }} />
-                {/* right — lilac, mid-right, overlaps green */}
-                <img src="/images/succulents/lilac.png" aria-hidden
-                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ width: "40%", top: "18%", right: "2%", transform: "rotate(9deg)" }} />
-                {/* bottom-centre — multi, slightly left of centre */}
-                <img src="/images/succulents/multi.png" aria-hidden
-                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
-                  style={{ width: "50%", bottom: "4%", left: "18%", transform: "rotate(5deg)" }} />
-                {/* bottom-left — redgreen, small peek */}
-                <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ width: "34%", bottom: "2%", left: "0%", transform: "rotate(-16deg)" }} />
+              <div className="mx-auto flex items-center justify-center gap-4">
+                {/* left column — sits lower */}
+                <div className="mt-8 flex flex-col gap-4">
+                  <img src="/images/succulents/green.png" aria-hidden
+                    className="w-20 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                    style={{ transform: "rotate(-11deg)" }} />
+                  <img src="/images/succulents/redgreen.png" aria-hidden
+                    className="w-16 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
+                    style={{ transform: "rotate(-6deg)" }} />
+                </div>
+                {/* right column — sits higher */}
+                <div className="-mt-6 flex flex-col gap-4">
+                  <img src="/images/succulents/lilac.png" aria-hidden
+                    className="w-16 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
+                    style={{ transform: "rotate(9deg)" }} />
+                  <img src="/images/succulents/multi.png" aria-hidden
+                    className="w-20 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                    style={{ transform: "rotate(7deg)" }} />
+                </div>
               </div>
             </Reveal>
 
