@@ -86,16 +86,16 @@ export default function WhyPage() {
               <div className="mx-auto flex items-center justify-center gap-3">
                 <img src="/images/succulents/green.png" aria-hidden
                   className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(-22deg) translateY(-18px)" }} />
+                  style={{ transform: "rotate(-14deg) translateY(-14px)" }} />
                 <img src="/images/succulents/lilac.png" aria-hidden
                   className="w-20 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ transform: "rotate(15deg) translateY(20px)" }} />
+                  style={{ transform: "rotate(9deg) translateY(10px)" }} />
                 <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="w-20 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ transform: "rotate(-8deg) translateY(-24px)" }} />
+                  className="w-[88px] shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
+                  style={{ transform: "rotate(-11deg) translateY(-8px)" }} />
                 <img src="/images/succulents/multi.png" aria-hidden
                   className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(18deg) translateY(14px)" }} />
+                  style={{ transform: "rotate(12deg) translateY(12px)" }} />
               </div>
             </Reveal>
 
