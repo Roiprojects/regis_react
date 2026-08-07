@@ -83,23 +83,23 @@ export default function WhyPage() {
 
             {/* Clipart collage — 4 succulents, scattered */}
             <Reveal delay={0.18}>
-              <div className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px]" style={{ aspectRatio: "1 / 1" }}>
+              <div className="relative mx-auto w-full max-w-[200px] lg:max-w-[220px]" style={{ aspectRatio: "1 / 1" }}>
                 {/* top-left — green */}
                 <img src="/images/succulents/green.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "40%", top: "0%", left: "2%", transform: "rotate(-8deg)" }} />
+                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                  style={{ width: "46%", top: "0%", left: "4%", transform: "rotate(-8deg)" }} />
                 {/* top-right — lilac */}
                 <img src="/images/succulents/lilac.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "36%", top: "4%", right: "4%", transform: "rotate(10deg)" }} />
+                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                  style={{ width: "42%", top: "2%", right: "4%", transform: "rotate(10deg)" }} />
                 {/* bottom-left — redgreen */}
                 <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "36%", bottom: "2%", left: "6%", transform: "rotate(-11deg)" }} />
-                {/* centre-bottom — multi */}
+                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                  style={{ width: "42%", bottom: "0%", left: "6%", transform: "rotate(-11deg)" }} />
+                {/* bottom-right — multi */}
                 <img src="/images/succulents/multi.png" aria-hidden
-                  className="absolute drop-shadow-[0_10px_24px_rgba(80,50,20,0.2)]"
-                  style={{ width: "42%", bottom: "0%", right: "2%", transform: "rotate(6deg)" }} />
+                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.2)]"
+                  style={{ width: "46%", bottom: "2%", right: "2%", transform: "rotate(6deg)" }} />
               </div>
             </Reveal>
 
