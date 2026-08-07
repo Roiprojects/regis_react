@@ -14,7 +14,7 @@ export default function ContactPage() {
         accent="redgreen.png"
       />
 
-      <section className="pb-32">
+      <section className="py-20 md:py-28">
         <div className="mx-auto grid max-w-[1400px] gap-16 px-[var(--spacing-gutter)] lg:grid-cols-[1.3fr_0.9fr]">
           <Reveal>
             <ContactForm />

@@ -25,7 +25,7 @@ export default function Lifecycle() {
               transition={{ duration: 0.7, ease: EASE, delay: i * 0.08 }}
               className="group relative bg-[#efe4ce] p-8 transition-colors duration-500 hover:bg-forest"
             >
-              <h3 className="font-[var(--font-display)] text-2xl text-copper transition-colors duration-500 group-hover:text-ivory-2">
+              <h3 className="font-[var(--font-display)] text-2xl text-black transition-colors duration-500 group-hover:text-ivory-2">
                 {stage.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-sage transition-colors duration-500 group-hover:text-ivory-2/60">

@@ -51,6 +51,63 @@ export default function WhyPage() {
         </div>
       </section>
 
+      {/* The Succulent — brand symbol */}
+      <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: "#efe4d2" }}>
+        {/* scattered succulent accents */}
+        <Botanical src="purple.png" className="pointer-events-none absolute -bottom-6 left-[2vw] w-20 opacity-70 md:w-28" />
+        <Botanical src="teal.png"   className="pointer-events-none absolute right-[2vw] top-8 w-14 opacity-60 md:w-20" />
+        <Botanical src="redgreen.png" className="pointer-events-none absolute bottom-10 right-[18vw] hidden w-10 opacity-50 lg:block" />
+
+        <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
+          <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+
+            {/* Text */}
+            <Reveal>
+              <p className="eyebrow mb-6 flex items-center gap-3 text-copper-dark">
+                <span className="h-px w-12 bg-copper" />
+                Our Symbol
+              </p>
+              <h2
+                className="font-[var(--font-display)] text-inkg"
+                style={{ fontSize: "clamp(1.7rem, 4vw, 3.6rem)", lineHeight: 1.08 }}
+              >
+                The Succulent
+              </h2>
+              <p className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-inkg-soft">
+                Distinctive in form and remarkably resilient by nature, succulents are designed
+                to thrive with minimal intervention. Their ability to store and conserve water
+                allows them to sustain themselves, while their unique forms and colours bring
+                character and beauty to the environment around them.
+              </p>
+              <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-inkg-soft">
+                Rooted in resilience and designed for sustainable growth, the succulent reflects
+                our belief that the right structure can thrive independently while strengthening
+                the ecosystem around it.
+              </p>
+            </Reveal>
+
+            {/* Clipart collage — same succulents used throughout the site */}
+            <Reveal delay={0.18}>
+              <div className="relative mx-auto aspect-square w-full max-w-[460px] lg:max-w-none">
+                {/* centre — all.png group */}
+                <img src="/images/succulents/all.png" aria-hidden
+                  className="absolute inset-0 m-auto w-[72%] drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]" />
+                {/* corner accents */}
+                <img src="/images/succulents/lilac.png" aria-hidden
+                  className="absolute left-0 top-0 w-[32%] -translate-x-1/4 -translate-y-1/4 drop-shadow-[0_6px_14px_rgba(80,50,20,0.15)]" />
+                <img src="/images/succulents/teal.png" aria-hidden
+                  className="absolute bottom-0 right-0 w-[28%] translate-x-1/4 translate-y-1/4 drop-shadow-[0_6px_14px_rgba(80,50,20,0.15)]" />
+                <img src="/images/succulents/green.png" aria-hidden
+                  className="absolute right-0 top-[10%] w-[24%] translate-x-1/3 drop-shadow-[0_6px_14px_rgba(80,50,20,0.12)]" />
+                <img src="/images/succulents/redgreen.png" aria-hidden
+                  className="absolute bottom-[8%] left-0 w-[22%] -translate-x-1/3 drop-shadow-[0_6px_14px_rgba(80,50,20,0.12)]" />
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
       {/* What sets us apart — compact high-end 3x2 grid */}
       <section className="relative overflow-hidden bg-ivory py-16 md:py-20">
         <Botanical src="green.png" className="right-[5vw] top-20 hidden w-12 sm:block md:w-16" />
