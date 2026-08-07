@@ -85,16 +85,16 @@ export default function WhyPage() {
             <Reveal delay={0.18}>
               <div className="mx-auto flex items-center justify-center gap-3">
                 <img src="/images/succulents/green.png" aria-hidden
-                  className="w-16 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                  className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
                   style={{ transform: "rotate(-10deg) translateY(-10px)" }} />
                 <img src="/images/succulents/lilac.png" aria-hidden
-                  className="w-14 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
+                  className="w-20 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
                   style={{ transform: "rotate(8deg) translateY(10px)" }} />
                 <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="w-14 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
+                  className="w-20 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
                   style={{ transform: "rotate(-7deg) translateY(-6px)" }} />
                 <img src="/images/succulents/multi.png" aria-hidden
-                  className="w-16 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
+                  className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
                   style={{ transform: "rotate(9deg) translateY(8px)" }} />
               </div>
             </Reveal>
