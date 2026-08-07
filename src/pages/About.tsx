@@ -46,7 +46,7 @@ export default function AboutPage() {
       {/* Our Difference */}
       <section
         className="py-16 md:py-24"
-        style={{ backgroundColor: "#ece5d9" }}
+        style={{ backgroundColor: "#eee8de" }}
       >
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
