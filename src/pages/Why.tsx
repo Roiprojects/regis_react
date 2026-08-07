@@ -83,23 +83,23 @@ export default function WhyPage() {
 
             {/* Clipart collage — 4 succulents, scattered */}
             <Reveal delay={0.18}>
-              <div className="relative mx-auto w-full max-w-[400px] lg:max-w-none" style={{ aspectRatio: "1 / 1" }}>
+              <div className="relative mx-auto w-full max-w-[380px] lg:max-w-none" style={{ aspectRatio: "1 / 1" }}>
                 {/* top-left — green */}
                 <img src="/images/succulents/green.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "38%", top: "0%", left: "2%", transform: "rotate(-8deg)" }} />
+                  style={{ width: "28%", top: "0%", left: "2%", transform: "rotate(-8deg)" }} />
                 {/* top-right — lilac */}
                 <img src="/images/succulents/lilac.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "34%", top: "4%", right: "4%", transform: "rotate(10deg)" }} />
+                  style={{ width: "25%", top: "4%", right: "4%", transform: "rotate(10deg)" }} />
                 {/* bottom-left — redgreen */}
                 <img src="/images/succulents/redgreen.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "34%", bottom: "2%", left: "6%", transform: "rotate(-11deg)" }} />
+                  style={{ width: "25%", bottom: "2%", left: "6%", transform: "rotate(-11deg)" }} />
                 {/* centre-bottom — multi */}
                 <img src="/images/succulents/multi.png" aria-hidden
                   className="absolute drop-shadow-[0_10px_24px_rgba(80,50,20,0.2)]"
-                  style={{ width: "40%", bottom: "0%", right: "2%", transform: "rotate(6deg)" }} />
+                  style={{ width: "30%", bottom: "0%", right: "2%", transform: "rotate(6deg)" }} />
               </div>
             </Reveal>
 

@@ -81,7 +81,7 @@ export default function CapitalPage() {
         <div className="mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
           <Reveal>
             <p className="eyebrow mb-6 text-[#bf9b4e]">Capital Services</p>
-            <h2 className="display-lg max-w-[18ch] text-[#14213d]">
+            <h2 className="display-md max-w-[18ch] text-[#14213d]">
               Preserving, growing and transitioning wealth
             </h2>
           </Reveal>
