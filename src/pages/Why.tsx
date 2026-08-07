@@ -53,7 +53,7 @@ export default function WhyPage() {
 
       {/* The Succulent — brand symbol */}
       <section className="relative overflow-hidden py-20 md:py-28" style={{ backgroundColor: "#efe4d2" }}>
-        <div className="relative mx-auto max-w-[1400px] px-[var(--spacing-gutter)]">
+        <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10">
           <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 
             {/* Text */}
@@ -81,33 +81,25 @@ export default function WhyPage() {
               </p>
             </Reveal>
 
-            {/* Clipart collage — scattered, non-uniform, referencing Picture2 layout */}
+            {/* Clipart collage — 4 succulents, scattered */}
             <Reveal delay={0.18}>
-              <div className="relative mx-auto w-full max-w-[460px] lg:max-w-none" style={{ aspectRatio: "1 / 1.05" }}>
-                {/* top-left — large purple */}
-                <img src="/images/succulents/purple.png" aria-hidden
-                  className="absolute drop-shadow-[0_10px_24px_rgba(80,50,20,0.22)]"
-                  style={{ width: "44%", top: "0%", left: "0%", transform: "rotate(-9deg)" }} />
-                {/* top-right — green */}
+              <div className="relative mx-auto w-full max-w-[400px] lg:max-w-none" style={{ aspectRatio: "1 / 1" }}>
+                {/* top-left — green */}
                 <img src="/images/succulents/green.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "34%", top: "2%", right: "6%", transform: "rotate(11deg)" }} />
-                {/* centre — multi (cream/yellow-green) */}
-                <img src="/images/succulents/multi.png" aria-hidden
-                  className="absolute drop-shadow-[0_10px_24px_rgba(80,50,20,0.2)]"
-                  style={{ width: "38%", top: "30%", left: "31%", transform: "rotate(3deg)" }} />
-                {/* right-centre — lilac */}
+                  style={{ width: "38%", top: "0%", left: "2%", transform: "rotate(-8deg)" }} />
+                {/* top-right — lilac */}
                 <img src="/images/succulents/lilac.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "30%", top: "48%", right: "2%", transform: "rotate(-7deg)" }} />
+                  style={{ width: "34%", top: "4%", right: "4%", transform: "rotate(10deg)" }} />
                 {/* bottom-left — redgreen */}
                 <img src="/images/succulents/redgreen.png" aria-hidden
                   className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "32%", bottom: "3%", left: "4%", transform: "rotate(-12deg)" }} />
-                {/* bottom-right — teal */}
-                <img src="/images/succulents/teal.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_20px_rgba(80,50,20,0.18)]"
-                  style={{ width: "32%", bottom: "0%", right: "10%", transform: "rotate(8deg)" }} />
+                  style={{ width: "34%", bottom: "2%", left: "6%", transform: "rotate(-11deg)" }} />
+                {/* centre-bottom — multi */}
+                <img src="/images/succulents/multi.png" aria-hidden
+                  className="absolute drop-shadow-[0_10px_24px_rgba(80,50,20,0.2)]"
+                  style={{ width: "40%", bottom: "0%", right: "2%", transform: "rotate(6deg)" }} />
               </div>
             </Reveal>
 
