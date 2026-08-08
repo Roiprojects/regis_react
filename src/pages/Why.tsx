@@ -81,49 +81,67 @@ export default function WhyPage() {
               </p>
             </Reveal>
 
-            {/* Clipart collage — Option 2: Natural Asymmetrical Cluster with leaf sprigs */}
+            {/* Clipart collage — Option 2: Natural Asymmetrical Cluster */}
             <Reveal delay={0.18}>
               <div className="mx-auto flex items-end justify-center">
 
-                {/* Left leaf sprig */}
-                <svg className="mb-5 mr-1 shrink-0" width="80" height="110" viewBox="0 0 80 110" fill="none">
-                  <path d="M74 105 Q54 65 22 10" stroke="#8FAD7A" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M66 86 Q53 78 46 82" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="42" cy="83" rx="11" ry="5" fill="#8FAD7A" opacity="0.85" transform="rotate(28 42 83)"/>
-                  <path d="M56 68 Q43 60 36 64" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="32" cy="65" rx="10" ry="4.5" fill="#7A9A6A" opacity="0.8" transform="rotate(20 32 65)"/>
-                  <path d="M46 51 Q33 43 26 47" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="22" cy="48" rx="9" ry="4" fill="#8FAD7A" opacity="0.75" transform="rotate(13 22 48)"/>
-                  <path d="M36 34 Q24 26 18 30" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="14" cy="31" rx="8" ry="3.5" fill="#7A9A6A" opacity="0.7" transform="rotate(7 14 31)"/>
+                {/* Left olive branch — tip visible on far left, hidden end tucks behind succulents */}
+                <svg className="-mr-14 shrink-0 pb-2" width="190" height="130" viewBox="0 0 190 130" fill="none">
+                  {/* stem: right (hidden) → left (visible tip), drooping downward */}
+                  <path d="M188 42 C165 48 138 58 108 72 C82 84 54 96 20 108 C13 111 6 112 2 110"
+                    stroke="#7e9840" strokeWidth="2.2" strokeLinecap="round"/>
+                  {/* leaves — alternating above / below stem, more elongated like olive */}
+                  <ellipse cx="180" cy="34" rx="15" ry="4.5" fill="#8faa48" transform="rotate(-38 180 34)"/>
+                  <ellipse cx="174" cy="52" rx="14" ry="4"   fill="#72893a" transform="rotate(12 174 52)"/>
+                  <ellipse cx="162" cy="38" rx="15" ry="4.5" fill="#8faa48" transform="rotate(-30 162 38)"/>
+                  <ellipse cx="156" cy="57" rx="14" ry="4"   fill="#72893a" transform="rotate(20 156 57)"/>
+                  <ellipse cx="140" cy="46" rx="14" ry="4.5" fill="#8faa48" transform="rotate(-22 140 46)"/>
+                  <ellipse cx="134" cy="64" rx="13" ry="4"   fill="#72893a" transform="rotate(26 134 64)"/>
+                  <ellipse cx="116" cy="56" rx="14" ry="4"   fill="#8faa48" transform="rotate(-16 116 56)"/>
+                  <ellipse cx="110" cy="75" rx="13" ry="4"   fill="#72893a" transform="rotate(30 110 75)"/>
+                  <ellipse cx="90"  cy="68" rx="13" ry="4"   fill="#8faa48" transform="rotate(-10 90 68)"/>
+                  <ellipse cx="84"  cy="86" rx="12" ry="3.5" fill="#72893a" transform="rotate(36 84 86)"/>
+                  <ellipse cx="65"  cy="78" rx="12" ry="3.5" fill="#8faa48" transform="rotate(-5 65 78)"/>
+                  <ellipse cx="59"  cy="96" rx="11" ry="3.5" fill="#72893a" transform="rotate(40 59 96)"/>
+                  <ellipse cx="38"  cy="90" rx="11" ry="3.5" fill="#8faa48" transform="rotate(0 38 90)"/>
+                  <ellipse cx="32"  cy="107" rx="10" ry="3"  fill="#72893a" transform="rotate(44 32 107)"/>
+                  <ellipse cx="14"  cy="100" rx="10" ry="3"  fill="#8faa48" transform="rotate(6 14 100)"/>
                 </svg>
 
-                {/* 4 succulents — all w-24, slight overlaps */}
+                {/* 4 succulents — all w-24, slightly overlapping */}
                 <img src="/images/succulents/green.png" aria-hidden
-                  className="relative z-10 w-24 shrink-0 -mr-3 drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(-6deg) translateY(-10px)" }} />
-                <img src="/images/succulents/multi.png" aria-hidden
-                  className="relative z-20 w-24 shrink-0 drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
-                  style={{ transform: "rotate(4deg) translateY(-4px)" }} />
+                  className="relative z-10 w-24 shrink-0 -mr-3 drop-shadow-[0_8px_20px_rgba(60,40,10,0.2)]"
+                  style={{ transform: "rotate(-4deg) translateY(-10px)" }} />
                 <img src="/images/succulents/lilac.png" aria-hidden
-                  className="relative z-30 w-24 shrink-0 -ml-3 drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
-                  style={{ transform: "rotate(-5deg) translateY(-8px)" }} />
+                  className="relative z-20 w-24 shrink-0 drop-shadow-[0_10px_24px_rgba(60,40,10,0.22)]"
+                  style={{ transform: "rotate(3deg) translateY(-4px)" }} />
+                <img src="/images/succulents/multi.png" aria-hidden
+                  className="relative z-10 w-24 shrink-0 -ml-2 drop-shadow-[0_8px_20px_rgba(60,40,10,0.18)]"
+                  style={{ transform: "rotate(-3deg) translateY(-7px)" }} />
                 <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="relative z-20 w-24 shrink-0 -ml-2 drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(7deg) translateY(-3px)" }} />
+                  className="relative z-10 w-24 shrink-0 -ml-2 drop-shadow-[0_8px_20px_rgba(60,40,10,0.18)]"
+                  style={{ transform: "rotate(5deg) translateY(-2px)" }} />
 
-                {/* Right leaf sprig (mirrored) */}
-                <svg className="mb-5 ml-1 shrink-0" width="80" height="110" viewBox="0 0 80 110" fill="none"
+                {/* Right olive branch — mirror of left */}
+                <svg className="-ml-14 shrink-0 pb-2" width="190" height="130" viewBox="0 0 190 130" fill="none"
                   style={{ transform: "scaleX(-1)" }}>
-                  <path d="M74 105 Q54 65 22 10" stroke="#8FAD7A" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M66 86 Q53 78 46 82" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="42" cy="83" rx="11" ry="5" fill="#8FAD7A" opacity="0.85" transform="rotate(28 42 83)"/>
-                  <path d="M56 68 Q43 60 36 64" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="32" cy="65" rx="10" ry="4.5" fill="#7A9A6A" opacity="0.8" transform="rotate(20 32 65)"/>
-                  <path d="M46 51 Q33 43 26 47" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="22" cy="48" rx="9" ry="4" fill="#8FAD7A" opacity="0.75" transform="rotate(13 22 48)"/>
-                  <path d="M36 34 Q24 26 18 30" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
-                  <ellipse cx="14" cy="31" rx="8" ry="3.5" fill="#7A9A6A" opacity="0.7" transform="rotate(7 14 31)"/>
+                  <path d="M188 42 C165 48 138 58 108 72 C82 84 54 96 20 108 C13 111 6 112 2 110"
+                    stroke="#7e9840" strokeWidth="2.2" strokeLinecap="round"/>
+                  <ellipse cx="180" cy="34" rx="15" ry="4.5" fill="#8faa48" transform="rotate(-38 180 34)"/>
+                  <ellipse cx="174" cy="52" rx="14" ry="4"   fill="#72893a" transform="rotate(12 174 52)"/>
+                  <ellipse cx="162" cy="38" rx="15" ry="4.5" fill="#8faa48" transform="rotate(-30 162 38)"/>
+                  <ellipse cx="156" cy="57" rx="14" ry="4"   fill="#72893a" transform="rotate(20 156 57)"/>
+                  <ellipse cx="140" cy="46" rx="14" ry="4.5" fill="#8faa48" transform="rotate(-22 140 46)"/>
+                  <ellipse cx="134" cy="64" rx="13" ry="4"   fill="#72893a" transform="rotate(26 134 64)"/>
+                  <ellipse cx="116" cy="56" rx="14" ry="4"   fill="#8faa48" transform="rotate(-16 116 56)"/>
+                  <ellipse cx="110" cy="75" rx="13" ry="4"   fill="#72893a" transform="rotate(30 110 75)"/>
+                  <ellipse cx="90"  cy="68" rx="13" ry="4"   fill="#8faa48" transform="rotate(-10 90 68)"/>
+                  <ellipse cx="84"  cy="86" rx="12" ry="3.5" fill="#72893a" transform="rotate(36 84 86)"/>
+                  <ellipse cx="65"  cy="78" rx="12" ry="3.5" fill="#8faa48" transform="rotate(-5 65 78)"/>
+                  <ellipse cx="59"  cy="96" rx="11" ry="3.5" fill="#72893a" transform="rotate(40 59 96)"/>
+                  <ellipse cx="38"  cy="90" rx="11" ry="3.5" fill="#8faa48" transform="rotate(0 38 90)"/>
+                  <ellipse cx="32"  cy="107" rx="10" ry="3"  fill="#72893a" transform="rotate(44 32 107)"/>
+                  <ellipse cx="14"  cy="100" rx="10" ry="3"  fill="#8faa48" transform="rotate(6 14 100)"/>
                 </svg>
 
               </div>
