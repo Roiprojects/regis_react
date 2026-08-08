@@ -81,25 +81,51 @@ export default function WhyPage() {
               </p>
             </Reveal>
 
-            {/* Clipart collage — Option 5: Natural Asymmetrical Cluster */}
+            {/* Clipart collage — Option 2: Natural Asymmetrical Cluster with leaf sprigs */}
             <Reveal delay={0.18}>
-              <div className="relative mx-auto" style={{ width: "280px", height: "260px" }}>
-                {/* upper-left — green, large */}
+              <div className="mx-auto flex items-end justify-center">
+
+                {/* Left leaf sprig */}
+                <svg className="mb-5 mr-1 shrink-0" width="80" height="110" viewBox="0 0 80 110" fill="none">
+                  <path d="M74 105 Q54 65 22 10" stroke="#8FAD7A" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M66 86 Q53 78 46 82" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="42" cy="83" rx="11" ry="5" fill="#8FAD7A" opacity="0.85" transform="rotate(28 42 83)"/>
+                  <path d="M56 68 Q43 60 36 64" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="32" cy="65" rx="10" ry="4.5" fill="#7A9A6A" opacity="0.8" transform="rotate(20 32 65)"/>
+                  <path d="M46 51 Q33 43 26 47" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="22" cy="48" rx="9" ry="4" fill="#8FAD7A" opacity="0.75" transform="rotate(13 22 48)"/>
+                  <path d="M36 34 Q24 26 18 30" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="14" cy="31" rx="8" ry="3.5" fill="#7A9A6A" opacity="0.7" transform="rotate(7 14 31)"/>
+                </svg>
+
+                {/* 4 succulents — all w-24, slight overlaps */}
                 <img src="/images/succulents/green.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
-                  style={{ width: "48%", top: "0%", left: "8%", transform: "rotate(-6deg)" }} />
-                {/* upper-right — lilac, medium */}
-                <img src="/images/succulents/lilac.png" aria-hidden
-                  className="absolute drop-shadow-[0_8px_18px_rgba(80,50,20,0.16)]"
-                  style={{ width: "36%", top: "4%", right: "0%", transform: "rotate(12deg)" }} />
-                {/* bottom-left — multi, dominant */}
+                  className="relative z-10 w-24 shrink-0 -mr-3 drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
+                  style={{ transform: "rotate(-6deg) translateY(-10px)" }} />
                 <img src="/images/succulents/multi.png" aria-hidden
-                  className="absolute drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
-                  style={{ width: "50%", bottom: "0%", left: "0%", transform: "rotate(7deg)" }} />
-                {/* bottom-right — redgreen, small accent */}
+                  className="relative z-20 w-24 shrink-0 drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
+                  style={{ transform: "rotate(4deg) translateY(-4px)" }} />
+                <img src="/images/succulents/lilac.png" aria-hidden
+                  className="relative z-30 w-24 shrink-0 -ml-3 drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
+                  style={{ transform: "rotate(-5deg) translateY(-8px)" }} />
                 <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.15)]"
-                  style={{ width: "28%", bottom: "8%", right: "8%", transform: "rotate(-10deg)" }} />
+                  className="relative z-20 w-24 shrink-0 -ml-2 drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
+                  style={{ transform: "rotate(7deg) translateY(-3px)" }} />
+
+                {/* Right leaf sprig (mirrored) */}
+                <svg className="mb-5 ml-1 shrink-0" width="80" height="110" viewBox="0 0 80 110" fill="none"
+                  style={{ transform: "scaleX(-1)" }}>
+                  <path d="M74 105 Q54 65 22 10" stroke="#8FAD7A" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M66 86 Q53 78 46 82" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="42" cy="83" rx="11" ry="5" fill="#8FAD7A" opacity="0.85" transform="rotate(28 42 83)"/>
+                  <path d="M56 68 Q43 60 36 64" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="32" cy="65" rx="10" ry="4.5" fill="#7A9A6A" opacity="0.8" transform="rotate(20 32 65)"/>
+                  <path d="M46 51 Q33 43 26 47" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="22" cy="48" rx="9" ry="4" fill="#8FAD7A" opacity="0.75" transform="rotate(13 22 48)"/>
+                  <path d="M36 34 Q24 26 18 30" stroke="#8FAD7A" strokeWidth="1.2" strokeLinecap="round"/>
+                  <ellipse cx="14" cy="31" rx="8" ry="3.5" fill="#7A9A6A" opacity="0.7" transform="rotate(7 14 31)"/>
+                </svg>
+
               </div>
             </Reveal>
 
