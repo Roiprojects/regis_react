@@ -81,21 +81,25 @@ export default function WhyPage() {
               </p>
             </Reveal>
 
-            {/* Clipart collage — horizontal garland row */}
+            {/* Clipart collage — Option 5: Natural Asymmetrical Cluster */}
             <Reveal delay={0.18}>
-              <div className="mx-auto flex items-center justify-center gap-3">
+              <div className="relative mx-auto" style={{ width: "280px", height: "260px" }}>
+                {/* upper-left — green, large */}
                 <img src="/images/succulents/green.png" aria-hidden
-                  className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(-14deg) translateY(-14px)" }} />
+                  className="absolute drop-shadow-[0_8px_18px_rgba(80,50,20,0.18)]"
+                  style={{ width: "48%", top: "0%", left: "8%", transform: "rotate(-6deg)" }} />
+                {/* upper-right — lilac, medium */}
                 <img src="/images/succulents/lilac.png" aria-hidden
-                  className="w-20 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ transform: "rotate(9deg) translateY(10px)" }} />
-                <img src="/images/succulents/redgreen.png" aria-hidden
-                  className="w-[88px] shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.16)]"
-                  style={{ transform: "rotate(-11deg) translateY(-8px)" }} />
+                  className="absolute drop-shadow-[0_8px_18px_rgba(80,50,20,0.16)]"
+                  style={{ width: "36%", top: "4%", right: "0%", transform: "rotate(12deg)" }} />
+                {/* bottom-left — multi, dominant */}
                 <img src="/images/succulents/multi.png" aria-hidden
-                  className="w-24 shrink-0 drop-shadow-[0_6px_14px_rgba(80,50,20,0.18)]"
-                  style={{ transform: "rotate(12deg) translateY(12px)" }} />
+                  className="absolute drop-shadow-[0_10px_22px_rgba(80,50,20,0.2)]"
+                  style={{ width: "50%", bottom: "0%", left: "0%", transform: "rotate(7deg)" }} />
+                {/* bottom-right — redgreen, small accent */}
+                <img src="/images/succulents/redgreen.png" aria-hidden
+                  className="absolute drop-shadow-[0_6px_14px_rgba(80,50,20,0.15)]"
+                  style={{ width: "28%", bottom: "8%", right: "8%", transform: "rotate(-10deg)" }} />
               </div>
             </Reveal>
 
